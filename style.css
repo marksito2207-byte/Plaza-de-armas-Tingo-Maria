@@ -2720,3 +2720,342 @@ button {
 
     font-size: 40px;
 }
+/* =========================================================
+   REPARACIÓN DE DISTRIBUCIÓN
+   PEGAR AL FINAL DE style.css
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#app {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+
+/* ===== CAPAS ===== */
+
+#escenario {
+    z-index: 1 !important;
+}
+
+.cabecera,
+.menu,
+.modo,
+.explorar,
+.marcador,
+#panel,
+.proyecto,
+.ayuda {
+    position: absolute !important;
+    z-index: 20 !important;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.cabecera {
+    top: 8px !important;
+    left: 14px !important;
+
+    width: 385px !important;
+    height: 62px !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   MENÚ CENTRAL
+========================================================= */
+
+.menu {
+    top: 8px !important;
+    left: 412px !important;
+
+    width: 602px !important;
+    height: 62px !important;
+
+    transform: none !important;
+
+    display: flex !important;
+}
+
+.menu-btn {
+    width: 100px !important;
+    height: 62px !important;
+
+    flex: 0 0 100px !important;
+}
+
+
+/* =========================================================
+   DÍA / NOCHE
+========================================================= */
+
+.modo {
+    top: 8px !important;
+    right: 14px !important;
+    left: auto !important;
+
+    width: 205px !important;
+    height: 48px !important;
+
+    display: flex !important;
+
+    transform: none !important;
+}
+
+.modo button {
+    width: 50% !important;
+    height: 48px !important;
+
+    min-width: 0 !important;
+    flex: 1 !important;
+}
+
+
+/* =========================================================
+   EXPLORA
+========================================================= */
+
+.explorar {
+    top: 80px !important;
+    left: 14px !important;
+    right: auto !important;
+
+    width: 225px !important;
+    height: 76px !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   PANEL DERECHO
+========================================================= */
+
+#panel {
+    top: 80px !important;
+    right: 14px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 260px !important;
+    height: auto !important;
+
+    max-height: calc(100vh - 100px) !important;
+
+    margin: 0 !important;
+
+    display: block !important;
+
+    transform: none !important;
+
+    overflow-y: auto !important;
+}
+
+#panel.oculto {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FOTO DEL PANEL
+========================================================= */
+
+.imagen-rampa {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 120px !important;
+
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+}
+
+#imagenPanel {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+
+    display: block;
+
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+#iconoPanel {
+    position: absolute !important;
+    inset: 0 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+/* =========================================================
+   MARCADORES
+========================================================= */
+
+.marcador {
+    width: auto !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 27px !important;
+
+    transform: none;
+}
+
+
+/* Edificio */
+
+.marcador.edificio {
+    top: 26% !important;
+    left: 3% !important;
+    right: auto !important;
+}
+
+
+/* Encuentro */
+
+.marcador.encuentro {
+    top: 43% !important;
+    left: 13% !important;
+    right: auto !important;
+}
+
+
+/* Monumento */
+
+.marcador.monumento {
+    top: 46% !important;
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+}
+
+
+/* Vehículo */
+
+.marcador.vehiculo {
+    top: 24% !important;
+    right: 22% !important;
+    left: auto !important;
+}
+
+
+/* Áreas verdes */
+
+.marcador.areas {
+    top: 56% !important;
+    right: 23% !important;
+    left: auto !important;
+}
+
+
+/* Mobiliario */
+
+.marcador.mobiliario {
+    top: 66% !important;
+    right: 26% !important;
+    left: auto !important;
+}
+
+
+/* Rampa */
+
+.marcador.rampa {
+    top: auto !important;
+    bottom: 17% !important;
+
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+}
+
+
+/* =========================================================
+   PROYECTO
+========================================================= */
+
+.proyecto {
+    left: 14px !important;
+    right: auto !important;
+
+    bottom: 13px !important;
+    top: auto !important;
+
+    width: 385px !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   AYUDA
+========================================================= */
+
+.ayuda {
+    right: 14px !important;
+    left: auto !important;
+
+    bottom: 13px !important;
+    top: auto !important;
+
+    width: 190px !important;
+
+    transform: none !important;
+}
+
+
+/* =========================================================
+   EVITAR QUE LAS IMÁGENES ROMPAN EL DISEÑO
+========================================================= */
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   AJUSTE PARA TU RESOLUCIÓN
+========================================================= */
+
+@media (max-width: 1366px) {
+
+    .cabecera {
+        width: 390px !important;
+    }
+
+    .menu {
+        left: 420px !important;
+        width: 600px !important;
+    }
+
+    .modo {
+        width: 200px !important;
+    }
+}
