@@ -1,1777 +1,75 @@
-/* =========================================
+/* ==========================================
    PLAZA DE ARMAS DE TINGO MARÍA
-========================================= */
+   CSS LIMPIO Y DEFINITIVO
+========================================== */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #16202a;
+    overflow: hidden;
+    background: #071a2b;
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
 }
 
 button {
-  font-family: inherit;
+    font-family: inherit;
 }
-
-/* =========================================
-   APLICACIÓN
-========================================= */
 
 #app {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-
-  /* Fondo provisional.
-     Luego aquí irá nuestra plaza */
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      #729d63 0%,
-      #51784d 32%,
-      #394d3d 65%,
-      #26342b 100%
-    );
-}
-
-/* =========================================
-   ESCENARIO CENTRAL
-========================================= */
-
-#escenario {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-/* =========================================
-   CABECERA IZQUIERDA
-========================================= */
-
-.cabecera {
-  position: absolute;
-  top: 14px;
-  left: 18px;
-
-  z-index: 20;
-
-  min-height: 76px;
-
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  padding: 10px 22px;
-
-  color: white;
-
-  background: rgba(5, 28, 51, 0.94);
-
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 14px;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-
-  backdrop-filter: blur(8px);
-}
-
-.ubicacion {
-  width: 48px;
-  height: 48px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 35px;
-}
-
-.titulo h1 {
-  font-size: 20px;
-  line-height: 1.08;
-  white-space: nowrap;
-}
-
-.cabecera p {
-  color: #e2e8f0;
-
-  font-size: 13px;
-  line-height: 1.4;
-
-  white-space: nowrap;
-}
-
-.separador {
-  width: 1px;
-  height: 46px;
-
-  background: rgba(255,255,255,0.3);
-}
-
-/* =========================================
-   MENÚ SUPERIOR
-========================================= */
-
-.menu {
-  position: absolute;
-
-  top: 14px;
-  left: 515px;
-
-  z-index: 20;
-
-  height: 76px;
-
-  display: flex;
-
-  overflow: hidden;
-
-  background: rgba(5, 27, 49, 0.95);
-
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 14px;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-}
-
-.menu-btn {
-  width: 110px;
-  height: 76px;
-
-  border: none;
-  border-right: 1px solid rgba(255,255,255,0.13);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  gap: 5px;
-
-  color: white;
-  background: transparent;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.menu-btn:last-child {
-  border-right: none;
-}
-
-.menu-btn span {
-  font-size: 23px;
-}
-
-.menu-btn:hover {
-  background: rgba(255,255,255,0.10);
-}
-
-.menu-btn.activo {
-  background: #0878f9;
-}
-
-/* =========================================
-   MODO DÍA / NOCHE
-========================================= */
-
-.modo {
-  position: absolute;
-
-  top: 14px;
-  right: 18px;
-
-  z-index: 25;
-
-  height: 58px;
-
-  display: flex;
-
-  overflow: hidden;
-
-  background: rgba(5, 27, 49, 0.95);
-
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 13px;
-
-  box-shadow: 0 7px 22px rgba(0,0,0,0.32);
-}
-
-.modo button {
-  min-width: 115px;
-
-  padding: 0 15px;
-
-  border: none;
-
-  color: white;
-  background: transparent;
-
-  font-size: 12px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.modo button:hover {
-  background: rgba(255,255,255,0.1);
-}
-
-.modo button.activo {
-  background: rgba(255,255,255,0.13);
-}
-
-/* =========================================
-   EXPLORAR
-========================================= */
-
-.explorar {
-  position: absolute;
-
-  top: 105px;
-  left: 20px;
-
-  z-index: 20;
-
-  width: 295px;
-
-  padding: 15px;
-
-  display: flex;
-  gap: 13px;
-
-  color: white;
-
-  background: rgba(5, 29, 53, 0.94);
-
-  border: 1px solid rgba(255,255,255,0.17);
-  border-radius: 13px;
-
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-}
-
-.iconoExplorar {
-  font-size: 36px;
-}
-
-.explorar h2 {
-  margin-bottom: 7px;
-
-  font-size: 20px;
-}
-
-.explorar p {
-  color: #e2e8f0;
-
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-/* =========================================
-   MARCADORES DE LA PLAZA
-========================================= */
-
-.marcador {
-  position: absolute;
-
-  z-index: 15;
-
-  padding: 8px 13px;
-
-  border: 1px solid rgba(255,255,255,0.32);
-  border-radius: 25px;
-
-  color: white;
-
-  background: rgba(5, 31, 56, 0.92);
-
-  box-shadow: 0 5px 16px rgba(0,0,0,0.35);
-
-  font-size: 13px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.2s,
-    background 0.2s;
-}
-
-.marcador:hover {
-  transform: scale(1.06);
-  background: #0878f9;
-}
-
-/* posiciones aproximadas */
-
-.edificio {
-  top: 25%;
-  left: 5%;
-}
-
-.encuentro {
-  top: 44%;
-  left: 17%;
-}
-
-.monumento {
-  top: 50%;
-  left: 49%;
-}
-
-.vehiculo {
-  top: 29%;
-  right: 27%;
-}
-
-.areas {
-  top: 61%;
-  right: 24%;
-}
-
-.mobiliario {
-  bottom: 24%;
-  right: 26%;
-}
-
-.rampa {
-  bottom: 17%;
-  left: 45%;
-}
-
-/* =========================================
-   PANEL DERECHO
-========================================= */
-
-#panel {
-  position: absolute;
-
-  top: 100px;
-  right: 18px;
-
-  z-index: 30;
-
-  width: 300px;
-
-  padding: 13px;
-
-  color: white;
-
-  background: rgba(5, 27, 49, 0.97);
-
-  border: 1px solid rgba(255,255,255,0.17);
-  border-radius: 14px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.42);
-
-  transition:
-    opacity 0.3s,
-    transform 0.3s;
-}
-
-#panel.oculto {
-  opacity: 0;
-  pointer-events: none;
-
-  transform: translateX(330px);
-}
-
-.panel-titulo {
-  margin-bottom: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.panel-titulo h2 {
-  font-size: 18px;
-}
-
-#cerrarPanel {
-  width: 32px;
-  height: 32px;
-
-  border: none;
-
-  color: white;
-  background: transparent;
-
-  font-size: 28px;
-
-  cursor: pointer;
-}
-
-/* =========================================
-   VISTA DE LA RAMPA
-========================================= */
-
-.imagen-rampa {
-  position: relative;
-
-  height: 160px;
-
-  margin-bottom: 10px;
-
-  overflow: hidden;
-
-  border-radius: 8px;
-
-  background:
-    linear-gradient(
-      155deg,
-      #507849 0%,
-      #76926c 35%,
-      #c7bda9 36%,
-      #e0d6c5 100%
-    );
-}
-
-.rampa-demo {
-  position: absolute;
-
-  left: 30px;
-  right: 30px;
-  bottom: 22px;
-
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #0878f9;
-
-  font-size: 36px;
-
-  background: #d6d2c9;
-
-  clip-path: polygon(
-    0 100%,
-    100% 20%,
-    100% 100%
-  );
-
-  border-bottom: 7px solid #9d988e;
-}
-
-/* =========================================
-   DATOS DEL PANEL
-========================================= */
-
-.fila {
-  min-height: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 12px;
-
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-
-  font-size: 13px;
-}
-
-.fila span {
-  color: #e4e8ed;
-}
-
-.fila strong {
-  text-align: right;
-}
-
-.detalle {
-  width: 100%;
-
-  margin-top: 12px;
-  padding: 11px;
-
-  border: none;
-  border-radius: 7px;
-
-  color: white;
-  background: #0878f9;
-
-  font-size: 14px;
-  font-weight: bold;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.detalle:hover {
-  background: #0069dc;
-}
-
-/* =========================================
-   INFORMACIÓN INFERIOR
-========================================= */
-
-.proyecto {
-  position: absolute;
-
-  left: 20px;
-  bottom: 18px;
-
-  z-index: 20;
-
-  width: 410px;
-
-  padding: 10px 15px;
-
-  display: flex;
-  align-items: center;
-  gap: 13px;
-
-  color: white;
-
-  background: rgba(5, 29, 53, 0.94);
-
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 12px;
-
-  box-shadow: 0 7px 22px rgba(0,0,0,0.35);
-}
-
-.mapa {
-  font-size: 34px;
-}
-
-.proyecto div {
-  display: flex;
-  flex-direction: column;
-}
-
-.proyecto small {
-  color: #d6dde5;
-
-  font-size: 11px;
-}
-
-.proyecto strong {
-  margin: 2px 0;
-
-  font-size: 13px;
-}
-
-.ayuda {
-  position: absolute;
-
-  right: 18px;
-  bottom: 18px;
-
-  z-index: 20;
-
-  padding: 11px 15px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
-
-  color: white;
-
-  background: rgba(5, 29, 53, 0.94);
-
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 12px;
-
-  box-shadow: 0 7px 22px rgba(0,0,0,0.35);
-
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.ayuda::first-letter {
-  font-size: 24px;
-}
-
-/* =========================================
-   MODO NOCHE
-========================================= */
-
-#app.noche {
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      #233b35 0%,
-      #172d2c 35%,
-      #0b1723 75%,
-      #050b13 100%
-    );
-}
-
-#app.noche::after {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  z-index: 2;
-
-  pointer-events: none;
-
-  background: rgba(1, 8, 20, 0.25);
-}
-
-/* Los controles quedan encima de la capa nocturna */
-
-.cabecera,
-.menu,
-.modo,
-.explorar,
-.marcador,
-#panel,
-.proyecto,
-.ayuda {
-  isolation: isolate;
-}
-
-/* =========================================
-   PANTALLAS MÁS PEQUEÑAS
-========================================= */
-
-@media (max-width: 1250px) {
-
-  .cabecera p,
-  .separador {
-    display: none;
-  }
-
-  .menu {
-    left: 300px;
-  }
-
-  .menu-btn {
-    width: 90px;
-  }
-
-}
-
-@media (max-width: 980px) {
-
-  body {
-    overflow: auto;
-  }
-
-  #app {
-    min-height: 760px;
-  }
-
-  .menu {
-    left: 10px;
-    right: 10px;
-    top: auto;
-    bottom: 10px;
-
-    height: 65px;
-  }
-
-  .menu-btn {
-    width: auto;
-    flex: 1;
-    height: 65px;
-  }
-
-  .proyecto,
-  .ayuda {
-    display: none;
-  }
-
-  #panel {
-    width: 270px;
-  }
-
-}
-/* =========================================
-   CORRECCIÓN DE LA PARTE SUPERIOR
-========================================= */
-
-/* Tarjeta del título */
-.cabecera {
-  top: 15px;
-  left: 18px;
-  height: 72px;
-  min-height: 72px;
-  padding: 9px 18px;
-}
-
-/* Botones día y noche */
-.modo {
-  top: 15px;
-  right: 18px;
-  height: 55px;
-}
-
-/* Menú en una segunda fila */
-.menu {
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: auto;
-  height: 64px;
-
-  border-radius: 14px;
-}
-
-/* Botones más horizontales */
-.menu-btn {
-  width: 125px;
-  height: 64px;
-
-  flex-direction: row;
-
-  gap: 7px;
-
-  padding: 0 10px;
-
-  white-space: nowrap;
-
-  font-size: 12px;
-}
-
-.menu-btn span {
-  font-size: 19px;
-}
-
-/* Bajamos Explora la plaza */
-.explorar {
-  top: 180px;
-}
-
-/* Bajamos el panel derecho */
-#panel {
-  top: 180px;
-}
-
-/* En pantallas medianas */
-@media (max-width: 1200px) {
-
-  .menu {
-    width: 94%;
-  }
-
-  .menu-btn {
-    width: auto;
-    flex: 1;
-    padding: 0 6px;
-  }
-}
-/* =====================================================
-   DISEÑO COMPACTO FINAL - PARTE SUPERIOR
-   Pegar AL FINAL de style.css
-===================================================== */
-
-/* ---------- TÍTULO ---------- */
-
-.cabecera {
-    top: 10px !important;
-    left: 15px !important;
-
-    width: 405px !important;
-    height: 62px !important;
-    min-height: 62px !important;
-
-    padding: 7px 14px !important;
-    gap: 10px !important;
-
-    border-radius: 12px !important;
-}
-
-.ubicacion {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 28px !important;
-}
-
-.titulo h1 {
-    font-size: 18px !important;
-    line-height: 1.05 !important;
-}
-
-.cabecera p {
-    display: block !important;
-    font-size: 11px !important;
-    line-height: 1.3 !important;
-}
-
-.separador {
-    display: block !important;
-    height: 38px !important;
-}
-
-
-/* =====================================================
-   MENÚ PRINCIPAL
-===================================================== */
-
-.menu {
-    top: 10px !important;
-    left: 455px !important;
-
-    transform: none !important;
-
-    width: auto !important;
-    height: 62px !important;
-
-    border-radius: 12px !important;
-}
-
-.menu-btn {
-    width: 112px !important;
-    height: 62px !important;
-
-    padding: 0 8px !important;
-
-    flex-direction: row !important;
-
-    gap: 6px !important;
-
-    font-size: 11px !important;
-
-    white-space: nowrap !important;
-}
-
-.menu-btn span {
-    font-size: 18px !important;
-}
-
-
-/* =====================================================
-   DÍA / NOCHE
-===================================================== */
-
-.modo {
-    top: 10px !important;
-    right: 15px !important;
-
-    height: 50px !important;
-
-    border-radius: 11px !important;
-}
-
-.modo button {
-    min-width: 100px !important;
-
-    padding: 0 11px !important;
-
-    font-size: 11px !important;
-}
-
-
-/* =====================================================
-   EXPLORA LA PLAZA
-===================================================== */
-
-.explorar {
-    top: 82px !important;
-    left: 15px !important;
-
-    width: 235px !important;
-
-    padding: 10px 12px !important;
-
-    gap: 10px !important;
-
-    border-radius: 11px !important;
-}
-
-.iconoExplorar {
-    font-size: 28px !important;
-}
-
-.explorar h2 {
-    margin-bottom: 3px !important;
-
-    font-size: 16px !important;
-}
-
-.explorar p {
-    font-size: 11px !important;
-    line-height: 1.35 !important;
-}
-
-
-/* =====================================================
-   PANEL DERECHO
-===================================================== */
-
-#panel {
-    top: 82px !important;
-    right: 15px !important;
-
-    width: 270px !important;
-
-    padding: 11px !important;
-
-    border-radius: 12px !important;
-}
-
-.panel-titulo {
-    margin-bottom: 8px !important;
-}
-
-.panel-titulo h2 {
-    font-size: 17px !important;
-}
-
-#cerrarPanel {
-    width: 26px !important;
-    height: 26px !important;
-
-    font-size: 22px !important;
-}
-
-
-/* Imagen de la rampa */
-
-.imagen-rampa {
-    height: 125px !important;
-    margin-bottom: 7px !important;
-}
-
-
-/* Datos */
-
-.fila {
-    min-height: 27px !important;
-    font-size: 11px !important;
-}
-
-.detalle {
-    margin-top: 8px !important;
-
-    padding: 9px !important;
-
-    font-size: 12px !important;
-}
-
-
-/* =====================================================
-   MARCADORES
-===================================================== */
-
-.marcador {
-    padding: 6px 11px !important;
-
-    font-size: 11px !important;
-
-    border-radius: 20px !important;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
 }
 
 
-/* Nuevas posiciones */
-
-.edificio {
-    top: 17% !important;
-    left: 26% !important;
-}
-
-.encuentro {
-    top: 36% !important;
-    left: 24% !important;
-}
-
-.monumento {
-    top: 31% !important;
-    left: 49% !important;
-}
-
-.vehiculo {
-    top: 17% !important;
-    right: 27% !important;
-}
-
-.areas {
-    top: 41% !important;
-    right: 23% !important;
-}
-
-.mobiliario {
-    top: 52% !important;
-    right: 24% !important;
-}
-
-.rampa {
-    top: 62% !important;
-    left: 45% !important;
-    bottom: auto !important;
-}
-
-
-/* =====================================================
-   PROYECTO - ABAJO IZQUIERDA
-===================================================== */
-
-.proyecto {
-    left: 15px !important;
-    bottom: 15px !important;
-
-    width: 390px !important;
-
-    padding: 8px 12px !important;
-
-    gap: 10px !important;
-
-    border-radius: 11px !important;
-}
-
-.mapa {
-    font-size: 28px !important;
-}
-
-.proyecto small {
-    font-size: 10px !important;
-}
-
-.proyecto strong {
-    font-size: 12px !important;
-}
-
-
-/* =====================================================
-   AYUDA - ABAJO DERECHA
-===================================================== */
-
-.ayuda {
-    right: 15px !important;
-    bottom: 15px !important;
-
-    padding: 9px 13px !important;
-
-    font-size: 11px !important;
-
-    border-radius: 11px !important;
-}
-
-
-/* =====================================================
-   AJUSTE PARA LAPTOP
-===================================================== */
-
-@media (max-width: 1400px) {
-
-    .cabecera {
-        width: 390px !important;
-    }
-
-    .menu {
-        left: 420px !important;
-    }
-
-    .menu-btn {
-        width: 100px !important;
-        font-size: 10px !important;
-    }
-
-    .modo button {
-        min-width: 92px !important;
-    }
-}
-
-
-/* =====================================================
-   AJUSTE PARA PANTALLAS MÁS PEQUEÑAS
-===================================================== */
-
-@media (max-width: 1180px) {
-
-    .cabecera {
-        width: 330px !important;
-    }
-
-    .cabecera p,
-    .separador {
-        display: none !important;
-    }
-
-    .menu {
-        left: 350px !important;
-    }
-
-    .menu-btn {
-        width: 82px !important;
-        padding: 0 4px !important;
-    }
-
-    .menu-btn span {
-        font-size: 15px !important;
-    }
-
-    .modo button {
-        min-width: 75px !important;
-        padding: 0 6px !important;
-    }
-}
 /* ==========================================
-   ARREGLO MARCADOR MOBILIARIO URBANO
+   FOTO DE LA PLAZA
 ========================================== */
-
-.marcador.mobiliario {
-    position: absolute !important;
-
-    top: 51% !important;
-    right: 23% !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    width: auto !important;
-    height: auto !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-
-    padding: 6px 12px !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 22px !important;
-
-    background: rgba(5, 31, 56, 0.94) !important;
-
-    color: white !important;
-
-    font-size: 11px !important;
-    font-weight: bold !important;
-
-    white-space: nowrap !important;
-
-    box-shadow: 0 5px 16px rgba(0,0,0,0.35) !important;
-}
-
-/* Efecto al pasar el mouse */
-
-.marcador.mobiliario:hover {
-    background: #0878f9 !important;
-    transform: scale(1.06) !important;
-}
-/* Ocultar elementos nuevos hasta terminar el escenario */
-.carro-animado,
-.rampa-visual {
-    display: none;
-}
-/* =====================================================
-   ESCENARIO - PLAZA DE ARMAS
-===================================================== */
 
 #escenario {
     position: absolute;
     inset: 0;
     z-index: 1;
-    overflow: hidden;
-
-    background: #354b3d;
-}
-
-
-/* =====================================================
-   CALLES ALREDEDOR DE LA PLAZA
-===================================================== */
-
-.calle {
-    position: absolute;
-    z-index: 2;
-
-    background: #30343a;
-
-    box-shadow:
-        inset 0 0 0 3px #555b61,
-        inset 0 0 20px rgba(0,0,0,.4);
-}
-
-/* Calle superior */
-
-.calle-arriba {
-    top: 95px;
-    left: 13%;
-    right: 13%;
-
-    height: 72px;
-
-    border-radius: 18px 18px 5px 5px;
-}
-
-/* Calle inferior */
-
-.calle-abajo {
-    bottom: 65px;
-    left: 13%;
-    right: 13%;
-
-    height: 72px;
-
-    border-radius: 5px 5px 18px 18px;
-}
-
-/* Calle izquierda */
-
-.calle-izquierda {
-    top: 95px;
-    bottom: 65px;
-
-    left: 13%;
-
-    width: 72px;
-
-    border-radius: 18px 5px 5px 18px;
-}
-
-/* Calle derecha */
-
-.calle-derecha {
-    top: 95px;
-    bottom: 65px;
-
-    right: 13%;
-
-    width: 72px;
-
-    border-radius: 5px 18px 18px 5px;
-}
-
-
-/* =====================================================
-   LÍNEAS VIALES
-===================================================== */
-
-.linea-vial {
-    position: absolute;
-
-    left: 4%;
-    right: 4%;
-
-    top: 50%;
-
-    height: 3px;
-
-    transform: translateY(-50%);
-
-    background:
-        repeating-linear-gradient(
-            90deg,
-            #f4d03f 0px,
-            #f4d03f 25px,
-            transparent 25px,
-            transparent 48px
-        );
-}
-
-.linea-vial.vertical {
-    top: 4%;
-    bottom: 4%;
-
-    left: 50%;
-    right: auto;
-
-    width: 3px;
-    height: auto;
-
-    transform: translateX(-50%);
-
-    background:
-        repeating-linear-gradient(
-            180deg,
-            #f4d03f 0px,
-            #f4d03f 25px,
-            transparent 25px,
-            transparent 48px
-        );
-}
-
-
-/* =====================================================
-   PLAZA PRINCIPAL
-===================================================== */
-
-.plaza-base {
-    position: absolute;
-
-    z-index: 3;
-
-    top: 167px;
-    bottom: 137px;
-
-    left: calc(13% + 72px);
-    right: calc(13% + 72px);
-
-    overflow: hidden;
-
-    border: 9px solid #c7c1ae;
-
-    border-radius: 38%;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #89a86c 0%,
-            #6e965b 45%,
-            #527747 100%
-        );
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.35),
-        inset 0 0 35px rgba(0,0,0,.16);
-}
-
-
-/* =====================================================
-   JARDINES
-===================================================== */
-
-.jardin {
-    position: absolute;
-
-    background:
-        radial-gradient(
-            circle,
-            #6fa65c,
-            #4e8046 70%
-        );
-
-    border: 3px solid rgba(43,92,49,.45);
-
-    z-index: 2;
-}
-
-.jardin-1 {
-    top: 8%;
-    left: 7%;
-
-    width: 37%;
-    height: 36%;
-
-    border-radius: 70% 20% 45% 20%;
-}
-
-.jardin-2 {
-    top: 8%;
-    right: 7%;
-
-    width: 37%;
-    height: 36%;
-
-    border-radius: 20% 70% 20% 45%;
-}
-
-.jardin-3 {
-    bottom: 8%;
-    left: 7%;
-
-    width: 37%;
-    height: 36%;
-
-    border-radius: 20% 45% 20% 70%;
-}
-
-.jardin-4 {
-    bottom: 8%;
-    right: 7%;
-
-    width: 37%;
-    height: 36%;
-
-    border-radius: 45% 20% 70% 20%;
-}
-
-
-/* =====================================================
-   CAMINOS DE LA PLAZA
-===================================================== */
-
-.camino {
-    position: absolute;
-
-    z-index: 4;
-
-    background: #d5cdbb;
-
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
-}
-
-.camino-horizontal {
-    top: 50%;
-    left: 0;
 
     width: 100%;
-    height: 42px;
-
-    transform: translateY(-50%);
-}
-
-.camino-vertical {
-    top: 0;
-    left: 50%;
-
-    width: 42px;
     height: 100%;
 
-    transform: translateX(-50%);
+    background-image: url("./plaza-tingo-maria.png.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transition: filter .4s ease;
 }
-
-
-/* Caminos diagonales */
-
-.camino-diagonal {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    z-index: 4;
-
-    width: 120%;
-    height: 28px;
-
-    background: #d5cdbb;
-
-    transform-origin: center;
-}
-
-.diagonal-1 {
-    transform:
-        translate(-50%, -50%)
-        rotate(27deg);
-}
-
-.diagonal-2 {
-    transform:
-        translate(-50%, -50%)
-        rotate(-27deg);
-}
-
-
-/* =====================================================
-   CENTRO Y MONUMENTO
-===================================================== */
-
-.centro-plaza {
-    position: absolute;
-
-    z-index: 7;
-
-    top: 50%;
-    left: 50%;
-
-    width: 125px;
-    height: 125px;
-
-    transform: translate(-50%, -50%);
-
-    border: 9px solid #d5cdbb;
-    border-radius: 50%;
-
-    background: #aaa390;
-
-    box-shadow:
-        0 8px 18px rgba(0,0,0,.35),
-        inset 0 0 10px rgba(255,255,255,.25);
-}
-
-.base-monumento {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    width: 55px;
-    height: 55px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #77766f;
-
-    box-shadow: 0 5px 10px rgba(0,0,0,.35);
-}
-
-.monumento-3d {
-    position: absolute;
-
-    left: 50%;
-    bottom: 22px;
-
-    width: 18px;
-    height: 65px;
-
-    transform: translateX(-50%);
-
-    background:
-        linear-gradient(
-            90deg,
-            #9b9b95,
-            #eeeeea,
-            #8b8b86
-        );
-
-    clip-path: polygon(
-        30% 100%,
-        20% 30%,
-        35% 0,
-        65% 0,
-        80% 30%,
-        70% 100%
-    );
-
-    filter: drop-shadow(5px 6px 4px rgba(0,0,0,.3));
-}
-
-
-/* =====================================================
-   ÁRBOLES
-===================================================== */
-
-.arbol {
-    position: absolute;
-
-    z-index: 6;
-
-    width: 38px;
-    height: 45px;
-}
-
-.copa {
-    position: absolute;
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #75b85e,
-            #36763c 65%,
-            #22572f
-        );
-
-    box-shadow: 4px 6px 7px rgba(0,0,0,.3);
-}
-
-.tronco {
-    position: absolute;
-
-    width: 7px;
-    height: 16px;
-
-    bottom: 0;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    background: #6d4728;
-}
-
-
-/* Posiciones */
-
-.arbol1 {
-    top: 12%;
-    left: 15%;
-}
-
-.arbol2 {
-    top: 15%;
-    left: 34%;
-}
-
-.arbol3 {
-    top: 13%;
-    right: 16%;
-}
-
-.arbol4 {
-    top: 19%;
-    right: 33%;
-}
-
-.arbol5 {
-    bottom: 13%;
-    left: 16%;
-}
-
-.arbol6 {
-    bottom: 18%;
-    left: 34%;
-}
-
-.arbol7 {
-    bottom: 13%;
-    right: 16%;
-}
-
-.arbol8 {
-    bottom: 18%;
-    right: 34%;
-}
-
-
-/* =====================================================
-   BANCAS
-===================================================== */
-
-.banca {
-    position: absolute;
-
-    z-index: 7;
-
-    width: 35px;
-    height: 11px;
-
-    border-radius: 3px;
-
-    background: #70462c;
-
-    box-shadow:
-        0 4px 0 #4d3323,
-        0 7px 7px rgba(0,0,0,.3);
-}
-
-.banca1 {
-    top: 32%;
-    left: 24%;
-}
-
-.banca2 {
-    top: 32%;
-    right: 24%;
-}
-
-.banca3 {
-    bottom: 30%;
-    left: 24%;
-}
-
-.banca4 {
-    bottom: 30%;
-    right: 24%;
-}
-
-
-/* =====================================================
-   CRUCE PEATONAL
-===================================================== */
-
-.cruce-peatonal {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 50%;
-    bottom: 72px;
-
-    width: 120px;
-    height: 60px;
-
-    transform: translateX(-50%);
-
-    display: flex;
-    justify-content: space-around;
-
-    padding: 5px 8px;
-}
-
-.cruce-peatonal span {
-    width: 11px;
-    height: 50px;
-
-    background: rgba(255,255,255,.9);
-
-    border-radius: 2px;
-}
-
-
-/* =====================================================
-   EFECTO DE PROFUNDIDAD
-===================================================== */
-
-.plaza-base::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: 10;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.08),
-            transparent 35%,
-            rgba(0,0,0,.08)
-        );
-}
-
-
-/* =====================================================
-   MODO NOCHE DEL ESCENARIO
-===================================================== */
 
 #app.noche #escenario {
     filter:
-        brightness(.55)
-        saturate(.8);
+        brightness(.35)
+        saturate(.75)
+        contrast(1.08);
+}
+
+#app.noche #escenario::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 20, 55, .25);
 }
 
 
-/* =====================================================
-   EVITAR QUE LA RAMPA Y EL CARRO APAREZCAN
-   SUELTOS TODAVÍA
-===================================================== */
-
-.carro-animado,
-.rampa-visual {
-    display: none !important;
-}
-/* =====================================================
-   FONDO REAL DE LA PLAZA
-===================================================== */
-
-#escenario {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    z-index: 1 !important;
-
-    background-image: url("./plaza-tingo-maria.png.png") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-}
-
-
-/* =====================================================
-   OCULTAR LA PLAZA HECHA CON CSS
-   porque ahora usamos la imagen
-===================================================== */
+/* Oculta la plaza antigua hecha con CSS */
 
 #escenario .calle,
 #escenario .plaza-base,
@@ -1782,9 +80,9 @@ button {
 }
 
 
-/* =====================================================
-   TODOS LOS CONTROLES ENCIMA DEL FONDO
-===================================================== */
+/* ==========================================
+   ELEMENTOS FLOTANTES
+========================================== */
 
 .cabecera,
 .menu,
@@ -1794,919 +92,429 @@ button {
 #panel,
 .proyecto,
 .ayuda {
-    z-index: 20 !important;
-}
-
-
-/* =====================================================
-   PANELES OSCUROS SEMITRANSPARENTES
-===================================================== */
-
-.cabecera,
-.menu,
-.modo,
-.explorar,
-#panel,
-.proyecto,
-.ayuda {
-    background: rgba(3, 25, 47, 0.94) !important;
-
-    backdrop-filter: blur(6px);
-}
-
-
-/* =====================================================
-   MARCADORES
-===================================================== */
-
-.marcador {
-    background: rgba(3, 30, 55, 0.94) !important;
-
-    border: 1px solid rgba(70, 150, 255, 0.9) !important;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.45) !important;
-}
-
-
-/* EDIFICIO PRINCIPAL */
-
-.marcador.edificio {
-    top: 23% !important;
-    left: 3% !important;
-}
-
-
-/* ZONA DE ENCUENTRO */
-
-.marcador.encuentro {
-    top: 44% !important;
-    left: 13% !important;
-}
-
-
-/* MONUMENTO CENTRAL */
-
-.marcador.monumento {
-    top: 47% !important;
-    left: 48% !important;
-}
-
-
-/* VEHÍCULO */
-
-.marcador.vehiculo {
-    top: 25% !important;
-    right: 22% !important;
-}
-
-
-/* ÁREAS VERDES */
-
-.marcador.areas {
-    top: 58% !important;
-    right: 23% !important;
-}
-
-
-/* MOBILIARIO */
-
-.marcador.mobiliario {
-    top: 69% !important;
-    right: 26% !important;
-}
-
-
-/* RAMPA */
-
-.marcador.rampa {
-    top: auto !important;
-    bottom: 17% !important;
-    left: 46% !important;
-}
-
-
-/* =====================================================
-   MODO DÍA
-===================================================== */
-
-#app:not(.noche) #escenario {
-    filter:
-        brightness(1)
-        saturate(1.05)
-        contrast(1.02) !important;
-}
-
-
-/* =====================================================
-   MODO NOCHE
-===================================================== */
-
-#app.noche #escenario {
-    filter:
-        brightness(0.35)
-        saturate(0.75)
-        contrast(1.1) !important;
-}
-
-
-/* Capa azul nocturna */
-
-#app.noche #escenario::after {
-    content: "";
-
     position: absolute;
-    inset: 0;
-
-    background: rgba(0, 20, 50, 0.28);
-
-    pointer-events: none;
-}
-/* =========================================================
-   ACABADO VISUAL PROFESIONAL
-   FUENTE + MÁRGENES + ALINEACIÓN
-========================================================= */
-
-/* FUENTE GENERAL */
-body,
-button {
-    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif !important;
-}
-
-* {
-    box-sizing: border-box !important;
+    z-index: 20;
 }
 
 
-/* =========================================================
-   CABECERA
-========================================================= */
+/* ==========================================
+   TÍTULO
+========================================== */
 
 .cabecera {
-    top: 10px !important;
-    left: 18px !important;
+    top: 10px;
+    left: 15px;
 
-    width: 390px !important;
-    height: 64px !important;
+    width: 390px;
+    height: 62px;
 
-    padding: 8px 16px !important;
+    display: flex;
+    align-items: center;
 
-    display: flex !important;
-    align-items: center !important;
+    gap: 11px;
+    padding: 7px 14px;
 
-    gap: 12px !important;
+    background: rgba(3, 25, 48, .96);
 
-    border: 1px solid rgba(110, 180, 255, .55) !important;
-    border-radius: 14px !important;
+    border: 1px solid rgba(75, 155, 240, .55);
+    border-radius: 14px;
 
-    background: rgba(3, 27, 52, .96) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
 
-    box-shadow: 0 6px 18px rgba(0,0,0,.32) !important;
+.ubicacion {
+    width: 38px;
+    flex: 0 0 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
 }
 
 .titulo h1 {
-    margin: 0 !important;
+    margin: 0;
 
-    font-size: 19px !important;
-    line-height: 1.05 !important;
+    font-size: 18px;
+    line-height: 1.05;
+    font-weight: 800;
 
-    font-weight: 800 !important;
-    letter-spacing: -.3px !important;
-}
-
-.cabecera p {
-    margin: 0 !important;
-
-    font-size: 10px !important;
-    line-height: 1.35 !important;
-
-    font-weight: 600 !important;
+    white-space: nowrap;
 }
 
 .separador {
-    margin: 0 3px !important;
+    width: 1px;
+    height: 38px;
+    flex: 0 0 1px;
+
+    background: rgba(255, 255, 255, .35);
+}
+
+.cabecera p {
+    margin: 0;
+
+    font-size: 10px;
+    line-height: 1.35;
+    font-weight: 600;
+
+    color: #e5edf7;
+    white-space: nowrap;
 }
 
 
-/* =========================================================
+/* ==========================================
    MENÚ SUPERIOR
-========================================================= */
+========================================== */
 
 .menu {
-    top: 10px !important;
-    left: 420px !important;
+    top: 10px;
+    left: 420px;
 
-    height: 64px !important;
+    height: 62px;
 
-    display: flex !important;
-    align-items: stretch !important;
+    display: flex;
 
-    border: 1px solid rgba(110,180,255,.45) !important;
-    border-radius: 14px !important;
+    overflow: hidden;
 
-    overflow: hidden !important;
+    background: rgba(3, 25, 48, .96);
 
-    background: rgba(3,27,52,.96) !important;
+    border: 1px solid rgba(75, 155, 240, .5);
+    border-radius: 14px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
 
 .menu-btn {
-    width: 100px !important;
-    height: 64px !important;
+    width: 100px;
+    height: 62px;
 
-    margin: 0 !important;
-    padding: 6px 8px !important;
+    flex: 0 0 100px;
 
-    display: flex !important;
-    flex-direction: row !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    justify-content: center !important;
-    align-items: center !important;
+    gap: 6px;
+    padding: 4px 6px;
 
-    gap: 6px !important;
+    border: 0;
+    border-right: 1px solid rgba(255, 255, 255, .12);
 
-    border: 0 !important;
-    border-right: 1px solid rgba(255,255,255,.12) !important;
+    color: white;
+    background: transparent;
 
-    border-radius: 0 !important;
+    font-size: 9px;
+    font-weight: 700;
 
-    font-size: 10px !important;
-    font-weight: 700 !important;
+    white-space: nowrap;
+    cursor: pointer;
 
-    white-space: nowrap !important;
+    transition: .2s ease;
+}
+
+.menu-btn:last-child {
+    border-right: 0;
 }
 
 .menu-btn span {
-    font-size: 17px !important;
-}
-
-.menu-btn.activo {
-    background: #087cff !important;
+    font-size: 16px;
 }
 
 .menu-btn:hover {
-    background: #116dcc !important;
+    background: rgba(25, 115, 220, .65);
+}
+
+.menu-btn.activo {
+    background: #087cff;
 }
 
 
-/* =========================================================
+/* ==========================================
    DÍA / NOCHE
-========================================================= */
+========================================== */
 
 .modo {
-    top: 10px !important;
-    right: 15px !important;
+    top: 10px;
+    right: 15px;
 
-    height: 52px !important;
+    width: 200px;
+    height: 48px;
 
-    border: 1px solid rgba(110,180,255,.4) !important;
-    border-radius: 13px !important;
+    display: flex;
 
-    overflow: hidden !important;
+    overflow: hidden;
+
+    background: rgba(3, 25, 48, .96);
+
+    border: 1px solid rgba(75, 155, 240, .5);
+    border-radius: 13px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
 }
 
 .modo button {
-    height: 52px !important;
+    width: 50%;
+    height: 48px;
 
-    min-width: 100px !important;
+    border: 0;
 
-    padding: 0 12px !important;
+    color: white;
+    background: transparent;
 
-    font-size: 10px !important;
-    font-weight: 700 !important;
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.modo button:hover,
+.modo button.activo {
+    background: rgba(255, 255, 255, .12);
 }
 
 
-/* =========================================================
+/* ==========================================
    EXPLORA LA PLAZA
-========================================================= */
+========================================== */
 
 .explorar {
-    top: 85px !important;
-    left: 18px !important;
+    top: 82px;
+    left: 15px;
 
-    width: 245px !important;
+    width: 220px;
+    min-height: 70px;
 
-    padding: 12px 14px !important;
+    display: flex;
+    align-items: flex-start;
 
-    display: flex !important;
-    align-items: flex-start !important;
+    gap: 8px;
+    padding: 9px 11px;
 
-    gap: 11px !important;
+    background: rgba(3, 25, 48, .95);
 
-    border: 1px solid rgba(110,180,255,.5) !important;
-    border-radius: 14px !important;
+    border: 1px solid rgba(75, 155, 240, .55);
+    border-radius: 12px;
 
-    background: rgba(3,27,52,.95) !important;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,.3) !important;
-}
-
-.explorar h2 {
-    margin: 0 0 5px 0 !important;
-
-    font-size: 17px !important;
-    line-height: 1.1 !important;
-
-    font-weight: 800 !important;
-}
-
-.explorar p {
-    margin: 0 !important;
-
-    font-size: 10.5px !important;
-    line-height: 1.45 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .32);
 }
 
 .iconoExplorar {
-    width: 35px !important;
-
-    flex: 0 0 35px !important;
-
-    font-size: 28px !important;
-
-    text-align: center !important;
-}
-
-
-/* =========================================================
-   MARCADORES
-========================================================= */
-
-.marcador {
-    min-height: 31px !important;
-
-    padding: 5px 12px !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    gap: 5px !important;
-
-    border: 1.5px solid #298cff !important;
-    border-radius: 18px !important;
-
-    background: rgba(3,27,52,.95) !important;
-
-    color: #fff !important;
-
-    font-size: 10.5px !important;
-    font-weight: 700 !important;
-
-    line-height: 1 !important;
-
-    white-space: nowrap !important;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,.35),
-        0 0 0 1px rgba(255,255,255,.04) !important;
-}
-
-.marcador:hover {
-    background: #087cff !important;
-
-    transform: scale(1.05);
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.4),
-        0 0 15px rgba(0,125,255,.4) !important;
-}
-
-
-/* =========================================================
-   PANEL DERECHO
-========================================================= */
-
-#panel {
-    top: 85px !important;
-    right: 15px !important;
-
-    width: 270px !important;
-
-    padding: 12px !important;
-
-    border: 1px solid rgba(110,180,255,.55) !important;
-    border-radius: 15px !important;
-
-    background: rgba(3,27,52,.97) !important;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,.4) !important;
-}
-
-.panel-titulo {
-    height: 29px !important;
-
-    margin: 0 0 9px 0 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-}
-
-.panel-titulo h2 {
-    margin: 0 !important;
-
-    font-size: 17px !important;
-    font-weight: 800 !important;
-}
-
-#cerrarPanel {
-    width: 27px !important;
-    height: 27px !important;
-
-    padding: 0 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    font-size: 22px !important;
-}
-
-
-/* =========================================================
-   IMAGEN DEL PANEL
-========================================================= */
-
-.imagen-rampa {
-    width: 100% !important;
-    height: 125px !important;
-
-    margin: 0 0 9px 0 !important;
-
-    border-radius: 9px !important;
-
-    overflow: hidden !important;
-}
-
-
-/* =========================================================
-   FILAS DE INFORMACIÓN
-========================================================= */
-
-.fila {
-    width: 100% !important;
-    min-height: 28px !important;
-
-    margin: 0 !important;
-    padding: 5px 1px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-
-    gap: 10px !important;
-
-    border-bottom: 1px solid rgba(255,255,255,.14) !important;
-
-    font-size: 10.5px !important;
-}
-
-.fila span {
-    flex: 1 !important;
-
-    text-align: left !important;
-}
-
-.fila strong {
-    flex: 0 0 auto !important;
-
-    text-align: right !important;
-
-    font-size: 10.5px !important;
-    font-weight: 800 !important;
-}
-
-
-/* =========================================================
-   BOTÓN VER DETALLE
-========================================================= */
-
-.detalle {
-    width: 100% !important;
-    height: 38px !important;
-
-    margin: 10px 0 0 0 !important;
-    padding: 0 12px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    border-radius: 8px !important;
-
-    background: #087cff !important;
-
-    font-size: 11px !important;
-    font-weight: 800 !important;
-
-    box-shadow: 0 4px 12px rgba(0,90,220,.25) !important;
-}
-
-.detalle:hover {
-    background: #006ee6 !important;
-}
-
-
-/* =========================================================
-   PROYECTO INFERIOR
-========================================================= */
-
-.proyecto {
-    left: 18px !important;
-    bottom: 15px !important;
-
-    width: 390px !important;
-    min-height: 58px !important;
-
-    padding: 8px 14px !important;
-
-    display: flex !important;
-    align-items: center !important;
-
-    border: 1px solid rgba(110,180,255,.5) !important;
-    border-radius: 13px !important;
-
-    background: rgba(3,27,52,.96) !important;
-}
-
-.proyecto small {
-    font-size: 9px !important;
-    line-height: 1.25 !important;
-}
-
-.proyecto strong {
-    margin: 2px 0 !important;
-
-    font-size: 11.5px !important;
-    line-height: 1.2 !important;
-
-    font-weight: 800 !important;
-}
-
-
-/* =========================================================
-   AYUDA INFERIOR
-========================================================= */
-
-.ayuda {
-    right: 15px !important;
-    bottom: 15px !important;
-
-    min-height: 48px !important;
-
-    padding: 8px 13px !important;
-
-    border: 1px solid rgba(110,180,255,.45) !important;
-    border-radius: 13px !important;
-
-    background: rgba(3,27,52,.95) !important;
-
-    font-size: 10px !important;
-    line-height: 1.35 !important;
-}
-/* =========================================================
-   AJUSTE COMPACTO FINAL
-   Corrige cuadros, márgenes y tamaños
-========================================================= */
-
-/* ===== EXPLORA LA PLAZA ===== */
-
-.explorar {
-    top: 78px !important;
-    left: 14px !important;
-
-    width: 225px !important;
-    height: 76px !important;
-    min-height: 0 !important;
-
-    padding: 9px 11px !important;
-
-    display: flex !important;
-    align-items: center !important;
-
-    gap: 9px !important;
-
-    overflow: hidden !important;
-
-    border-radius: 12px !important;
-}
-
-.iconoExplorar {
-    width: 32px !important;
-    height: 45px !important;
-
-    flex: 0 0 32px !important;
-
-    display: flex !important;
-    align-items: flex-start !important;
-    justify-content: center !important;
-
-    font-size: 25px !important;
+    width: 30px;
+    flex: 0 0 30px;
+
+    text-align: center;
+    font-size: 25px;
 }
 
 .explorar > div:last-child {
-    min-width: 0 !important;
-    flex: 1 !important;
+    min-width: 0;
+    flex: 1;
 }
 
 .explorar h2 {
-    margin: 0 0 4px 0 !important;
+    margin: 0 0 4px;
 
-    font-size: 15px !important;
-    line-height: 16px !important;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 800;
 
-    white-space: nowrap !important;
+    white-space: nowrap;
 }
 
 .explorar p {
-    margin: 0 !important;
+    margin: 0;
 
-    font-size: 9px !important;
-    line-height: 12px !important;
+    font-size: 9px;
+    line-height: 1.35;
 
-    max-width: 155px !important;
+    color: #e6edf6;
 }
 
 
-/* ===== EDIFICIO PRINCIPAL ===== */
-/* Lo bajamos para que no toque Explora */
-
-.marcador.edificio {
-    top: 26% !important;
-    left: 3% !important;
-
-    right: auto !important;
-    bottom: auto !important;
-}
-
-
-/* ===== MARCADORES MÁS PEQUEÑOS ===== */
+/* ==========================================
+   MARCADORES
+========================================== */
 
 .marcador {
-    min-height: 27px !important;
+    width: auto;
+    min-width: 0;
+    min-height: 27px;
 
-    padding: 4px 10px !important;
+    padding: 4px 10px;
 
-    font-size: 9px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius: 16px !important;
+    gap: 5px;
+
+    color: white;
+    background: rgba(3, 27, 52, .95);
+
+    border: 1.5px solid #298cff;
+    border-radius: 18px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .38);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.marcador:hover {
+    background: #087cff;
+    transform: scale(1.05);
 }
 
 
-/* ===== PANEL DERECHO MÁS COMPACTO ===== */
+/* POSICIONES */
 
-#panel {
-    top: 78px !important;
-    right: 14px !important;
-
-    width: 260px !important;
-
-    padding: 11px !important;
-
-    border-radius: 13px !important;
-
-    max-height: calc(100vh - 95px) !important;
-    overflow-y: auto !important;
+.marcador.edificio {
+    top: 25%;
+    left: 3%;
 }
-
-.panel-titulo {
-    height: 25px !important;
-    margin-bottom: 7px !important;
-}
-
-.panel-titulo h2 {
-    font-size: 15px !important;
-}
-
-#cerrarPanel {
-    width: 24px !important;
-    height: 24px !important;
-
-    font-size: 19px !important;
-}
-
-
-/* Imagen */
-
-.imagen-rampa {
-    height: 115px !important;
-
-    margin-bottom: 7px !important;
-
-    border-radius: 8px !important;
-}
-
-
-/* Filas */
-
-.fila {
-    min-height: 25px !important;
-
-    padding: 3px 1px !important;
-
-    font-size: 9px !important;
-}
-
-.fila span,
-.fila strong {
-    font-size: 9px !important;
-}
-
-
-/* Botón */
-
-.detalle {
-    height: 35px !important;
-
-    margin-top: 8px !important;
-
-    font-size: 10px !important;
-}
-
-
-/* =========================================================
-   TÍTULO SUPERIOR
-========================================================= */
-
-.cabecera {
-    top: 8px !important;
-    left: 14px !important;
-
-    width: 385px !important;
-    height: 62px !important;
-
-    padding: 7px 14px !important;
-}
-
-.titulo h1 {
-    font-size: 18px !important;
-}
-
-
-/* =========================================================
-   MENÚ
-========================================================= */
-
-.menu {
-    top: 8px !important;
-    left: 412px !important;
-
-    height: 62px !important;
-}
-
-.menu-btn {
-    width: 100px !important;
-    height: 62px !important;
-
-    padding: 4px 6px !important;
-
-    font-size: 9px !important;
-}
-
-.menu-btn span {
-    font-size: 16px !important;
-}
-
-
-/* =========================================================
-   DÍA / NOCHE
-========================================================= */
-
-.modo {
-    top: 8px !important;
-    right: 14px !important;
-
-    height: 48px !important;
-}
-
-.modo button {
-    height: 48px !important;
-
-    min-width: 96px !important;
-
-    font-size: 9px !important;
-}
-
-
-/* =========================================================
-   POSICIONES LIMPIAS DE LOS MARCADORES
-========================================================= */
 
 .marcador.encuentro {
-    top: 43% !important;
-    left: 13% !important;
+    top: 43%;
+    left: 13%;
 }
 
 .marcador.monumento {
-    top: 46% !important;
-    left: 50% !important;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    transform: translateX(-50%) !important;
+.marcador.monumento:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
 .marcador.vehiculo {
-    top: 24% !important;
-    right: 22% !important;
+    top: 24%;
+    right: 22%;
 }
 
 .marcador.areas {
-    top: 56% !important;
-    right: 23% !important;
+    top: 56%;
+    right: 23%;
 }
 
 .marcador.mobiliario {
-    top: 66% !important;
-    right: 26% !important;
-
-    width: auto !important;
-    height: auto !important;
+    top: 66%;
+    right: 26%;
 }
 
 .marcador.rampa {
-    top: auto !important;
-    bottom: 17% !important;
+    bottom: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-    left: 50% !important;
-
-    transform: translateX(-50%) !important;
+.marcador.rampa:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
 
-/* =========================================================
-   CUADROS INFERIORES
-========================================================= */
+/* ==========================================
+   PANEL DERECHO
+========================================== */
 
-.proyecto {
-    left: 14px !important;
-    bottom: 13px !important;
+#panel {
+    top: 82px;
+    right: 15px;
 
-    width: 385px !important;
-    min-height: 52px !important;
+    width: 260px;
+    max-height: calc(100vh - 100px);
 
-    padding: 7px 12px !important;
+    padding: 11px;
+
+    overflow-y: auto;
+
+    color: white;
+    background: rgba(3, 25, 48, .97);
+
+    border: 1px solid rgba(75, 155, 240, .55);
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .42);
 }
 
-.proyecto strong {
-    font-size: 10px !important;
+#panel.oculto {
+    display: none;
 }
 
-.proyecto small {
-    font-size: 8px !important;
+.panel-titulo {
+    width: 100%;
+    min-height: 27px;
+
+    margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.ayuda {
-    right: 14px !important;
-    bottom: 13px !important;
+.panel-titulo h2 {
+    margin: 0;
 
-    min-height: 43px !important;
+    font-size: 15px;
+    font-weight: 800;
+}
 
-    padding: 7px 11px !important;
+#cerrarPanel {
+    width: 25px;
+    height: 25px;
 
-    font-size: 9px !important;
+    padding: 0;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background: transparent;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
 }
 
 
-/* =========================================================
-   TODOS LOS CUADROS CON EL MISMO ACABADO
-========================================================= */
-
-.cabecera,
-.menu,
-.modo,
-.explorar,
-#panel,
-.proyecto,
-.ayuda {
-    border: 1px solid rgba(80, 155, 230, 0.55) !important;
-
-    box-shadow:
-        0 5px 16px rgba(0,0,0,.32) !important;
-}
-/* FOTO REAL DEL PANEL */
+/* ==========================================
+   FOTO DEL PANEL
+========================================== */
 
 .imagen-rampa {
-    position: relative !important;
-    width: 100% !important;
-    height: 125px !important;
+    position: relative;
 
-    padding: 0 !important;
-    overflow: hidden !important;
+    width: 100%;
+    height: 120px;
 
-    border-radius: 9px !important;
-    background: #10283c !important;
+    margin-bottom: 8px;
+
+    overflow: hidden;
+
+    background: #10283c;
+    border-radius: 9px;
 }
 
 #imagenPanel {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
 
     display: block;
 
-    object-fit: cover !important;
-    object-position: center !important;
+    object-fit: cover;
+    object-position: center;
 
-    border-radius: 9px !important;
+    border-radius: 9px;
 }
 
 #iconoPanel {
@@ -2714,348 +522,239 @@ button {
     inset: 0;
 
     display: none;
-
     align-items: center;
     justify-content: center;
 
-    font-size: 40px;
-}
-/* =========================================================
-   REPARACIÓN DE DISTRIBUCIÓN
-   PEGAR AL FINAL DE style.css
-========================================================= */
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-}
-
-#app {
-    position: relative !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    overflow: hidden !important;
+    font-size: 38px;
 }
 
 
-/* ===== CAPAS ===== */
+/* Oculta la rampa dibujada antigua */
 
-#escenario {
-    z-index: 1 !important;
-}
-
-.cabecera,
-.menu,
-.modo,
-.explorar,
-.marcador,
-#panel,
-.proyecto,
-.ayuda {
-    position: absolute !important;
-    z-index: 20 !important;
-}
-
-
-/* =========================================================
-   TÍTULO
-========================================================= */
-
-.cabecera {
-    top: 8px !important;
-    left: 14px !important;
-
-    width: 385px !important;
-    height: 62px !important;
-
-    margin: 0 !important;
-}
-
-
-/* =========================================================
-   MENÚ CENTRAL
-========================================================= */
-
-.menu {
-    top: 8px !important;
-    left: 412px !important;
-
-    width: 602px !important;
-    height: 62px !important;
-
-    transform: none !important;
-
-    display: flex !important;
-}
-
-.menu-btn {
-    width: 100px !important;
-    height: 62px !important;
-
-    flex: 0 0 100px !important;
-}
-
-
-/* =========================================================
-   DÍA / NOCHE
-========================================================= */
-
-.modo {
-    top: 8px !important;
-    right: 14px !important;
-    left: auto !important;
-
-    width: 205px !important;
-    height: 48px !important;
-
-    display: flex !important;
-
-    transform: none !important;
-}
-
-.modo button {
-    width: 50% !important;
-    height: 48px !important;
-
-    min-width: 0 !important;
-    flex: 1 !important;
-}
-
-
-/* =========================================================
-   EXPLORA
-========================================================= */
-
-.explorar {
-    top: 80px !important;
-    left: 14px !important;
-    right: auto !important;
-
-    width: 225px !important;
-    height: 76px !important;
-
-    margin: 0 !important;
-
-    display: flex !important;
-
-    transform: none !important;
-}
-
-
-/* =========================================================
-   PANEL DERECHO
-========================================================= */
-
-#panel {
-    top: 80px !important;
-    right: 14px !important;
-    left: auto !important;
-    bottom: auto !important;
-
-    width: 260px !important;
-    height: auto !important;
-
-    max-height: calc(100vh - 100px) !important;
-
-    margin: 0 !important;
-
-    display: block !important;
-
-    transform: none !important;
-
-    overflow-y: auto !important;
-}
-
-#panel.oculto {
+.rampa-demo {
     display: none !important;
 }
 
 
-/* =========================================================
-   FOTO DEL PANEL
-========================================================= */
+/* ==========================================
+   INFORMACIÓN DEL PANEL
+========================================== */
 
-.imagen-rampa {
-    position: relative !important;
+.fila {
+    width: 100%;
+    min-height: 25px;
 
-    width: 100% !important;
-    height: 120px !important;
+    padding: 3px 1px;
 
-    margin: 0 0 8px 0 !important;
-    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    overflow: hidden !important;
+    gap: 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+
+    font-size: 9px;
 }
 
-#imagenPanel {
-    position: relative !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: 100% !important;
-
-    display: block;
-
-    object-fit: cover !important;
-    object-position: center !important;
+.fila span {
+    flex: 1;
+    text-align: left;
+    color: #e7edf5;
 }
 
-#iconoPanel {
-    position: absolute !important;
-    inset: 0 !important;
+.fila strong {
+    flex: 0 0 auto;
 
-    align-items: center !important;
-    justify-content: center !important;
-}
+    text-align: right;
 
-
-/* =========================================================
-   MARCADORES
-========================================================= */
-
-.marcador {
-    width: auto !important;
-    height: auto !important;
-
-    min-width: 0 !important;
-    min-height: 27px !important;
-
-    transform: none;
+    font-size: 9px;
+    font-weight: 800;
 }
 
 
-/* Edificio */
+/* ==========================================
+   VER DETALLE
+========================================== */
 
-.marcador.edificio {
-    top: 26% !important;
-    left: 3% !important;
-    right: auto !important;
+.detalle {
+    width: 100%;
+    height: 35px;
+
+    margin-top: 8px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 8px;
+
+    color: white;
+    background: #087cff;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.detalle:hover {
+    background: #006ee6;
 }
 
 
-/* Encuentro */
-
-.marcador.encuentro {
-    top: 43% !important;
-    left: 13% !important;
-    right: auto !important;
-}
-
-
-/* Monumento */
-
-.marcador.monumento {
-    top: 46% !important;
-    left: 50% !important;
-    right: auto !important;
-
-    transform: translateX(-50%) !important;
-}
-
-
-/* Vehículo */
-
-.marcador.vehiculo {
-    top: 24% !important;
-    right: 22% !important;
-    left: auto !important;
-}
-
-
-/* Áreas verdes */
-
-.marcador.areas {
-    top: 56% !important;
-    right: 23% !important;
-    left: auto !important;
-}
-
-
-/* Mobiliario */
-
-.marcador.mobiliario {
-    top: 66% !important;
-    right: 26% !important;
-    left: auto !important;
-}
-
-
-/* Rampa */
-
-.marcador.rampa {
-    top: auto !important;
-    bottom: 17% !important;
-
-    left: 50% !important;
-    right: auto !important;
-
-    transform: translateX(-50%) !important;
-}
-
-
-/* =========================================================
-   PROYECTO
-========================================================= */
+/* ==========================================
+   PROYECTO ABAJO IZQUIERDA
+========================================== */
 
 .proyecto {
-    left: 14px !important;
-    right: auto !important;
+    left: 15px;
+    bottom: 13px;
 
-    bottom: 13px !important;
-    top: auto !important;
+    width: 385px;
+    min-height: 52px;
 
-    width: 385px !important;
+    padding: 7px 12px;
 
-    transform: none !important;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background: rgba(3, 25, 48, .96);
+
+    border: 1px solid rgba(75, 155, 240, .5);
+    border-radius: 13px;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, .35);
+}
+
+.mapa {
+    font-size: 27px;
+}
+
+.proyecto div {
+    display: flex;
+    flex-direction: column;
+}
+
+.proyecto small {
+    font-size: 8px;
+    line-height: 1.25;
+
+    color: #dce5ef;
+}
+
+.proyecto strong {
+    margin: 2px 0;
+
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 800;
 }
 
 
-/* =========================================================
-   AYUDA
-========================================================= */
+/* ==========================================
+   AYUDA ABAJO DERECHA
+========================================== */
 
 .ayuda {
-    right: 14px !important;
-    left: auto !important;
+    right: 15px;
+    bottom: 13px;
 
-    bottom: 13px !important;
-    top: auto !important;
+    width: 190px;
+    min-height: 43px;
 
-    width: 190px !important;
+    padding: 7px 11px;
 
-    transform: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: white;
+    background: rgba(3, 25, 48, .95);
+
+    border: 1px solid rgba(75, 155, 240, .5);
+    border-radius: 13px;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, .35);
+
+    font-size: 9px;
+    line-height: 1.35;
 }
 
 
-/* =========================================================
-   EVITAR QUE LAS IMÁGENES ROMPAN EL DISEÑO
-========================================================= */
+/* ==========================================
+   IMÁGENES
+========================================== */
 
 img {
     max-width: 100%;
 }
 
 
-/* =========================================================
-   AJUSTE PARA TU RESOLUCIÓN
-========================================================= */
+/* ==========================================
+   AJUSTE PARA LAPTOP
+========================================== */
 
 @media (max-width: 1366px) {
 
     .cabecera {
-        width: 390px !important;
+        width: 390px;
     }
 
     .menu {
-        left: 420px !important;
-        width: 600px !important;
+        left: 412px;
+    }
+
+    .menu-btn {
+        width: 99px;
+        flex-basis: 99px;
     }
 
     .modo {
-        width: 200px !important;
+        width: 198px;
+    }
+}
+
+
+/* ==========================================
+   PANTALLAS MÁS PEQUEÑAS
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .cabecera {
+        width: 330px;
+    }
+
+    .cabecera p,
+    .separador {
+        display: none;
+    }
+
+    .menu {
+        left: 350px;
+    }
+
+    .menu-btn {
+        width: 82px;
+        flex-basis: 82px;
+
+        font-size: 8px;
+    }
+
+    .modo {
+        width: 170px;
+    }
+
+    .modo button {
+        font-size: 8px;
     }
 }
