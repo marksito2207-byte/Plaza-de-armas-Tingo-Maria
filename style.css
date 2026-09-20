@@ -1,11 +1,9 @@
-/* ==========================================
+/* =====================================================
    PLAZA DE ARMAS DE TINGO MARÍA
-   CSS LIMPIO Y DEFINITIVO
-========================================== */
+   CSS LIMPIO Y ORDENADO
+===================================================== */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,16 +11,13 @@ html,
 body {
     width: 100%;
     height: 100%;
-}
-
-body {
+    margin: 0;
     overflow: hidden;
-    background: #071a2b;
-    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
 }
 
+body,
 button {
-    font-family: inherit;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
 
 #app {
@@ -31,12 +26,13 @@ button {
     height: 100vh;
     overflow: hidden;
     color: white;
+    background: #18392f;
 }
 
 
-/* ==========================================
-   FOTO DE LA PLAZA
-========================================== */
+/* =====================================================
+   FONDO
+===================================================== */
 
 #escenario {
     position: absolute;
@@ -51,38 +47,17 @@ button {
     background-position: center center;
     background-repeat: no-repeat;
 
-    transition: filter .4s ease;
+    transition: filter 0.4s ease;
 }
 
 #app.noche #escenario {
-    filter:
-        brightness(.35)
-        saturate(.75)
-        contrast(1.08);
-}
-
-#app.noche #escenario::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 20, 55, .25);
+    filter: brightness(0.38) saturate(0.8);
 }
 
 
-/* Oculta la plaza antigua hecha con CSS */
-
-#escenario .calle,
-#escenario .plaza-base,
-#escenario .cruce-peatonal,
-#escenario .carro-animado,
-#escenario .rampa-visual {
-    display: none !important;
-}
-
-
-/* ==========================================
-   ELEMENTOS FLOTANTES
-========================================== */
+/* =====================================================
+   CAPAS
+===================================================== */
 
 .cabecera,
 .menu,
@@ -97,9 +72,27 @@ button {
 }
 
 
-/* ==========================================
+/* =====================================================
+   ESTILO GENERAL DE CUADROS
+===================================================== */
+
+.cabecera,
+.menu,
+.modo,
+.explorar,
+#panel,
+.proyecto,
+.ayuda {
+    background: rgba(3, 25, 48, 0.94);
+    border: 1px solid rgba(80, 160, 255, 0.55);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+}
+
+
+/* =====================================================
    TÍTULO
-========================================== */
+===================================================== */
 
 .cabecera {
     top: 10px;
@@ -108,36 +101,25 @@ button {
     width: 390px;
     height: 62px;
 
+    padding: 8px 14px;
+
     display: flex;
     align-items: center;
-
     gap: 11px;
-    padding: 7px 14px;
 
-    background: rgba(3, 25, 48, .96);
-
-    border: 1px solid rgba(75, 155, 240, .55);
-    border-radius: 14px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    border-radius: 13px;
 }
 
 .ubicacion {
-    width: 38px;
-    flex: 0 0 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     font-size: 27px;
+    flex-shrink: 0;
 }
 
 .titulo h1 {
     margin: 0;
 
     font-size: 18px;
-    line-height: 1.05;
+    line-height: 1.02;
     font-weight: 800;
 
     white-space: nowrap;
@@ -146,9 +128,8 @@ button {
 .separador {
     width: 1px;
     height: 38px;
-    flex: 0 0 1px;
 
-    background: rgba(255, 255, 255, .35);
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .cabecera p {
@@ -157,72 +138,61 @@ button {
     font-size: 10px;
     line-height: 1.35;
     font-weight: 600;
-
-    color: #e5edf7;
-    white-space: nowrap;
 }
 
 
-/* ==========================================
+/* =====================================================
    MENÚ SUPERIOR
-========================================== */
+===================================================== */
 
 .menu {
     top: 10px;
     left: 420px;
 
+    width: 600px;
     height: 62px;
 
     display: flex;
 
     overflow: hidden;
 
-    background: rgba(3, 25, 48, .96);
-
-    border: 1px solid rgba(75, 155, 240, .5);
-    border-radius: 14px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    border-radius: 13px;
 }
 
 .menu-btn {
-    width: 100px;
-    height: 62px;
+    flex: 1;
+    height: 100%;
 
-    flex: 0 0 100px;
+    padding: 0 6px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 6px;
-    padding: 4px 6px;
 
-    border: 0;
-    border-right: 1px solid rgba(255, 255, 255, .12);
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
 
-    color: white;
     background: transparent;
+    color: white;
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
 
     white-space: nowrap;
     cursor: pointer;
-
-    transition: .2s ease;
 }
 
 .menu-btn:last-child {
-    border-right: 0;
+    border-right: none;
 }
 
 .menu-btn span {
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .menu-btn:hover {
-    background: rgba(25, 115, 220, .65);
+    background: rgba(20, 120, 240, 0.3);
 }
 
 .menu-btn.activo {
@@ -230,227 +200,199 @@ button {
 }
 
 
-/* ==========================================
-   DÍA / NOCHE
-========================================== */
+/* =====================================================
+   MODO DÍA / NOCHE
+===================================================== */
 
 .modo {
     top: 10px;
     right: 15px;
 
     width: 200px;
-    height: 48px;
+    height: 50px;
 
     display: flex;
 
     overflow: hidden;
-
-    background: rgba(3, 25, 48, .96);
-
-    border: 1px solid rgba(75, 155, 240, .5);
-    border-radius: 13px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    border-radius: 12px;
 }
 
 .modo button {
     width: 50%;
-    height: 48px;
+    height: 100%;
 
-    border: 0;
+    border: none;
 
-    color: white;
     background: transparent;
+    color: white;
 
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
 
     cursor: pointer;
 }
 
+.modo button + button {
+    border-left: 1px solid rgba(255,255,255,.15);
+}
+
 .modo button:hover,
 .modo button.activo {
-    background: rgba(255, 255, 255, .12);
+    background: rgba(255,255,255,.09);
 }
 
 
-/* ==========================================
+/* =====================================================
    EXPLORA LA PLAZA
-========================================== */
+===================================================== */
 
 .explorar {
-    top: 82px;
+    top: 84px;
     left: 15px;
 
-    width: 220px;
-    min-height: 70px;
+    width: 235px;
+    min-height: 82px;
+
+    padding: 10px 12px;
 
     display: flex;
     align-items: flex-start;
+    gap: 10px;
 
-    gap: 8px;
-    padding: 9px 11px;
-
-    background: rgba(3, 25, 48, .95);
-
-    border: 1px solid rgba(75, 155, 240, .55);
     border-radius: 12px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .32);
 }
 
 .iconoExplorar {
-    width: 30px;
-    flex: 0 0 30px;
-
-    text-align: center;
-    font-size: 25px;
-}
-
-.explorar > div:last-child {
-    min-width: 0;
-    flex: 1;
+    font-size: 27px;
+    line-height: 1;
 }
 
 .explorar h2 {
-    margin: 0 0 4px;
+    margin: 0 0 4px 0;
 
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.1;
-    font-weight: 800;
-
-    white-space: nowrap;
 }
 
 .explorar p {
     margin: 0;
 
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1.35;
-
-    color: #e6edf6;
 }
 
 
-/* ==========================================
+/* =====================================================
    MARCADORES
-========================================== */
+===================================================== */
 
 .marcador {
-    width: auto;
-    min-width: 0;
-    min-height: 27px;
+    padding: 6px 11px;
 
-    padding: 4px 10px;
+    border: 1px solid #258aff;
+    border-radius: 20px;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 5px;
-
+    background: rgba(3, 30, 55, 0.94);
     color: white;
-    background: rgba(3, 27, 52, .95);
 
-    border: 1.5px solid #298cff;
-    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.4);
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .38);
-
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
 
     white-space: nowrap;
     cursor: pointer;
 
-    transition: .2s ease;
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease;
 }
 
 .marcador:hover {
+    transform: scale(1.06);
     background: #087cff;
-    transform: scale(1.05);
 }
 
 
-/* POSICIONES */
+/* EDIFICIO */
 
 .marcador.edificio {
-    top: 25%;
+    top: 23%;
     left: 3%;
 }
 
+
+/* ZONA DE ENCUENTRO */
+
 .marcador.encuentro {
-    top: 43%;
+    top: 44%;
     left: 13%;
 }
 
+
+/* MONUMENTO */
+
 .marcador.monumento {
-    top: 46%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 47%;
+    left: 48%;
 }
 
-.marcador.monumento:hover {
-    transform: translateX(-50%) scale(1.05);
-}
+
+/* VEHÍCULO */
 
 .marcador.vehiculo {
-    top: 24%;
+    top: 25%;
     right: 22%;
 }
 
+
+/* ÁREAS VERDES */
+
 .marcador.areas {
-    top: 56%;
+    top: 58%;
     right: 23%;
 }
 
+
+/* MOBILIARIO */
+
 .marcador.mobiliario {
-    top: 66%;
+    top: 69%;
     right: 26%;
 }
 
+
+/* RAMPA */
+
 .marcador.rampa {
-    bottom: 17%;
     left: 50%;
+    bottom: 17%;
+
     transform: translateX(-50%);
 }
 
 .marcador.rampa:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: translateX(-50%) scale(1.06);
 }
 
 
-/* ==========================================
+/* =====================================================
    PANEL DERECHO
-========================================== */
+===================================================== */
 
 #panel {
-    top: 82px;
+    top: 84px;
     right: 15px;
 
-    width: 260px;
-    max-height: calc(100vh - 100px);
+    width: 270px;
 
     padding: 11px;
 
-    overflow-y: auto;
-
-    color: white;
-    background: rgba(3, 25, 48, .97);
-
-    border: 1px solid rgba(75, 155, 240, .55);
-    border-radius: 14px;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .42);
-}
-
-#panel.oculto {
-    display: none;
+    border-radius: 13px;
 }
 
 .panel-titulo {
     width: 100%;
-    min-height: 27px;
 
     margin-bottom: 8px;
 
@@ -462,47 +404,45 @@ button {
 .panel-titulo h2 {
     margin: 0;
 
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 800;
 }
 
 #cerrarPanel {
-    width: 25px;
-    height: 25px;
+    width: 27px;
+    height: 27px;
 
     padding: 0;
-    border: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: none;
 
-    color: white;
     background: transparent;
+    color: white;
 
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1;
 
     cursor: pointer;
 }
 
 
-/* ==========================================
-   FOTO DEL PANEL
-========================================== */
+/* =====================================================
+   IMAGEN DEL PANEL
+===================================================== */
 
 .imagen-rampa {
     position: relative;
 
     width: 100%;
-    height: 120px;
+    height: 125px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     overflow: hidden;
 
-    background: #10283c;
     border-radius: 9px;
+
+    background: #d9d3c4;
 }
 
 #imagenPanel {
@@ -525,116 +465,88 @@ button {
     align-items: center;
     justify-content: center;
 
-    font-size: 38px;
+    font-size: 40px;
 }
 
 
-/* Oculta la rampa dibujada antigua */
-
-.rampa-demo {
-    display: none !important;
-}
-
-
-/* ==========================================
-   INFORMACIÓN DEL PANEL
-========================================== */
+/* =====================================================
+   DATOS DEL PANEL
+===================================================== */
 
 .fila {
-    width: 100%;
-    min-height: 25px;
+    min-height: 27px;
 
-    padding: 3px 1px;
+    padding: 5px 0;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 8px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    border-bottom: 1px solid rgba(255,255,255,.15);
 
-    font-size: 9px;
+    font-size: 10px;
 }
 
 .fila span {
-    flex: 1;
-    text-align: left;
-    color: #e7edf5;
+    color: #e7edf4;
 }
 
 .fila strong {
-    flex: 0 0 auto;
-
     text-align: right;
-
-    font-size: 9px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 
-/* ==========================================
-   VER DETALLE
-========================================== */
+/* =====================================================
+   BOTÓN VER DETALLE
+===================================================== */
 
 .detalle {
     width: 100%;
-    height: 35px;
 
-    margin-top: 8px;
-    padding: 0 10px;
+    margin-top: 9px;
+    padding: 10px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: none;
+    border-radius: 7px;
 
-    border: 0;
-    border-radius: 8px;
-
-    color: white;
     background: #087cff;
+    color: white;
 
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 800;
 
     cursor: pointer;
-
-    transition: .2s ease;
 }
 
 .detalle:hover {
-    background: #006ee6;
+    background: #0069db;
 }
 
 
-/* ==========================================
+/* =====================================================
    PROYECTO ABAJO IZQUIERDA
-========================================== */
+===================================================== */
 
 .proyecto {
     left: 15px;
-    bottom: 13px;
+    bottom: 14px;
 
-    width: 385px;
-    min-height: 52px;
+    width: 390px;
+    min-height: 54px;
 
     padding: 7px 12px;
 
     display: flex;
     align-items: center;
-
     gap: 10px;
 
-    background: rgba(3, 25, 48, .96);
-
-    border: 1px solid rgba(75, 155, 240, .5);
-    border-radius: 13px;
-
-    box-shadow: 0 5px 16px rgba(0, 0, 0, .35);
+    border-radius: 12px;
 }
 
 .mapa {
-    font-size: 27px;
+    font-size: 29px;
 }
 
 .proyecto div {
@@ -643,92 +555,63 @@ button {
 }
 
 .proyecto small {
-    font-size: 8px;
-    line-height: 1.25;
-
-    color: #dce5ef;
+    font-size: 9px;
+    line-height: 1.2;
 }
 
 .proyecto strong {
     margin: 2px 0;
 
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.2;
-    font-weight: 800;
 }
 
 
-/* ==========================================
+/* =====================================================
    AYUDA ABAJO DERECHA
-========================================== */
+===================================================== */
 
 .ayuda {
     right: 15px;
-    bottom: 13px;
+    bottom: 14px;
 
-    width: 190px;
-    min-height: 43px;
+    min-width: 190px;
+    min-height: 48px;
 
     padding: 7px 11px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 9px;
 
-    gap: 8px;
-
-    color: white;
-    background: rgba(3, 25, 48, .95);
-
-    border: 1px solid rgba(75, 155, 240, .5);
-    border-radius: 13px;
-
-    box-shadow: 0 5px 16px rgba(0, 0, 0, .35);
+    border-radius: 12px;
 
     font-size: 9px;
-    line-height: 1.35;
+    line-height: 1.3;
+
+    text-align: center;
 }
 
 
-/* ==========================================
-   IMÁGENES
-========================================== */
+/* =====================================================
+   OCULTAR ELEMENTOS ANTIGUOS DEL ESCENARIO
+===================================================== */
 
-img {
-    max-width: 100%;
+#escenario .calle,
+#escenario .plaza-base,
+#escenario .cruce-peatonal,
+#escenario .carro-animado,
+#escenario .rampa-visual {
+    display: none;
 }
 
 
-/* ==========================================
-   AJUSTE PARA LAPTOP
-========================================== */
+/* =====================================================
+   ADAPTACIÓN PARA LAPTOP
+===================================================== */
 
-@media (max-width: 1366px) {
-
-    .cabecera {
-        width: 390px;
-    }
-
-    .menu {
-        left: 412px;
-    }
-
-    .menu-btn {
-        width: 99px;
-        flex-basis: 99px;
-    }
-
-    .modo {
-        width: 198px;
-    }
-}
-
-
-/* ==========================================
-   PANTALLAS MÁS PEQUEÑAS
-========================================== */
-
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
 
     .cabecera {
         width: 330px;
@@ -740,231 +623,65 @@ img {
     }
 
     .menu {
-        left: 350px;
+        left: 355px;
+        width: 540px;
     }
 
     .menu-btn {
-        width: 82px;
-        flex-basis: 82px;
-
-        font-size: 8px;
+        font-size: 9px;
     }
 
     .modo {
-        width: 170px;
+        width: 180px;
+    }
+
+    #panel {
+        width: 250px;
+    }
+}
+
+
+/* =====================================================
+   PANTALLAS MÁS PEQUEÑAS
+===================================================== */
+
+@media (max-width: 1080px) {
+
+    .cabecera {
+        width: 280px;
+    }
+
+    .titulo h1 {
+        font-size: 16px;
+    }
+
+    .menu {
+        left: 300px;
+        width: 500px;
+    }
+
+    .menu-btn {
+        gap: 3px;
+        font-size: 8px;
+    }
+
+    .menu-btn span {
+        font-size: 14px;
+    }
+
+    .modo {
+        width: 165px;
     }
 
     .modo button {
-        font-size: 8px;
+        font-size: 9px;
     }
-}
-/* ==========================================
-   CORRECCIÓN DEFINITIVA DE POSICIONES
-========================================== */
 
-/* AYUDA: esquina inferior derecha */
-.ayuda {
-    position: absolute !important;
-    top: auto !important;
-    left: auto !important;
+    .explorar {
+        width: 210px;
+    }
 
-    right: 15px !important;
-    bottom: 15px !important;
-
-    width: 190px !important;
-    height: auto !important;
-    min-height: 44px !important;
-
-    padding: 8px 12px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    gap: 8px !important;
-
-    overflow: hidden !important;
-
-    z-index: 50 !important;
-
-    background: rgba(3, 25, 48, .96) !important;
-    border: 1px solid rgba(60, 145, 245, .65) !important;
-    border-radius: 12px !important;
-
-    color: white !important;
-
-    font-size: 9px !important;
-    line-height: 1.3 !important;
-
-    transform: none !important;
-}
-
-
-/* EXPLORA: arriba izquierda */
-.explorar {
-    position: absolute !important;
-
-    top: 82px !important;
-    left: 15px !important;
-
-    right: auto !important;
-    bottom: auto !important;
-
-    width: 220px !important;
-    height: auto !important;
-    min-height: 70px !important;
-
-    z-index: 50 !important;
-
-    transform: none !important;
-}
-
-
-/* MOBILIARIO URBANO */
-.marcador.mobiliario {
-    position: absolute !important;
-
-    top: 67% !important;
-    right: 25% !important;
-
-    left: auto !important;
-    bottom: auto !important;
-
-    width: auto !important;
-    height: auto !important;
-
-    transform: none !important;
-
-    z-index: 40 !important;
-}
-
-
-/* ÁREAS VERDES */
-.marcador.areas {
-    position: absolute !important;
-
-    top: 57% !important;
-    right: 23% !important;
-
-    left: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-}
-
-
-/* VEHÍCULO */
-.marcador.vehiculo {
-    position: absolute !important;
-
-    top: 24% !important;
-    right: 22% !important;
-
-    left: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-}
-
-
-/* EDIFICIO */
-.marcador.edificio {
-    position: absolute !important;
-
-    top: 24% !important;
-    left: 3% !important;
-
-    right: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-}
-
-
-/* ZONA DE ENCUENTRO */
-.marcador.encuentro {
-    position: absolute !important;
-
-    top: 43% !important;
-    left: 13% !important;
-
-    right: auto !important;
-    bottom: auto !important;
-
-    transform: none !important;
-}
-
-
-/* MONUMENTO */
-.marcador.monumento {
-    position: absolute !important;
-
-    top: 46% !important;
-    left: 50% !important;
-
-    right: auto !important;
-    bottom: auto !important;
-
-    transform: translateX(-50%) !important;
-}
-
-
-/* RAMPA */
-.marcador.rampa {
-    position: absolute !important;
-
-    top: auto !important;
-    left: 50% !important;
-
-    right: auto !important;
-    bottom: 17% !important;
-
-    transform: translateX(-50%) !important;
-}
-
-
-/* PROYECTO ABAJO IZQUIERDA */
-.proyecto {
-    position: absolute !important;
-
-    top: auto !important;
-    right: auto !important;
-
-    left: 15px !important;
-    bottom: 15px !important;
-
-    transform: none !important;
-
-    z-index: 50 !important;
-}
-
-
-/* PANEL DERECHO */
-#panel {
-    position: absolute !important;
-
-    top: 82px !important;
-    right: 15px !important;
-
-    left: auto !important;
-    bottom: auto !important;
-
-    width: 260px !important;
-
-    transform: none !important;
-
-    z-index: 60 !important;
-}
-
-
-/* Si está cerrado, NO debe quedar ningún pedazo visible */
-#panel.oculto {
-    display: none !important;
-}
-
-
-/* Evitar elementos sueltos arriba */
-.carro-animado,
-.rampa-visual {
-    display: none !important;
+    #panel {
+        width: 235px;
+    }
 }
