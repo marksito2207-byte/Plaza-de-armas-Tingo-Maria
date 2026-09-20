@@ -1167,3 +1167,8 @@ button {
     background: #0878f9 !important;
     transform: scale(1.06) !important;
 }
+/* Ocultar elementos nuevos hasta terminar el escenario */
+.carro-animado,
+.rampa-visual {
+    display: none;
+}
