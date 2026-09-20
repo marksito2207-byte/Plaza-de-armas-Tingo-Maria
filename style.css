@@ -703,3 +703,78 @@ button {
   }
 
 }
+/* =========================================
+   CORRECCIÓN DE LA PARTE SUPERIOR
+========================================= */
+
+/* Tarjeta del título */
+.cabecera {
+  top: 15px;
+  left: 18px;
+  height: 72px;
+  min-height: 72px;
+  padding: 9px 18px;
+}
+
+/* Botones día y noche */
+.modo {
+  top: 15px;
+  right: 18px;
+  height: 55px;
+}
+
+/* Menú en una segunda fila */
+.menu {
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: auto;
+  height: 64px;
+
+  border-radius: 14px;
+}
+
+/* Botones más horizontales */
+.menu-btn {
+  width: 125px;
+  height: 64px;
+
+  flex-direction: row;
+
+  gap: 7px;
+
+  padding: 0 10px;
+
+  white-space: nowrap;
+
+  font-size: 12px;
+}
+
+.menu-btn span {
+  font-size: 19px;
+}
+
+/* Bajamos Explora la plaza */
+.explorar {
+  top: 180px;
+}
+
+/* Bajamos el panel derecho */
+#panel {
+  top: 180px;
+}
+
+/* En pantallas medianas */
+@media (max-width: 1200px) {
+
+  .menu {
+    width: 94%;
+  }
+
+  .menu-btn {
+    width: auto;
+    flex: 1;
+    padding: 0 6px;
+  }
+}
