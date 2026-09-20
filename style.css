@@ -778,3 +778,349 @@ button {
     padding: 0 6px;
   }
 }
+/* =====================================================
+   DISEÑO COMPACTO FINAL - PARTE SUPERIOR
+   Pegar AL FINAL de style.css
+===================================================== */
+
+/* ---------- TÍTULO ---------- */
+
+.cabecera {
+    top: 10px !important;
+    left: 15px !important;
+
+    width: 405px !important;
+    height: 62px !important;
+    min-height: 62px !important;
+
+    padding: 7px 14px !important;
+    gap: 10px !important;
+
+    border-radius: 12px !important;
+}
+
+.ubicacion {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 28px !important;
+}
+
+.titulo h1 {
+    font-size: 18px !important;
+    line-height: 1.05 !important;
+}
+
+.cabecera p {
+    display: block !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+}
+
+.separador {
+    display: block !important;
+    height: 38px !important;
+}
+
+
+/* =====================================================
+   MENÚ PRINCIPAL
+===================================================== */
+
+.menu {
+    top: 10px !important;
+    left: 455px !important;
+
+    transform: none !important;
+
+    width: auto !important;
+    height: 62px !important;
+
+    border-radius: 12px !important;
+}
+
+.menu-btn {
+    width: 112px !important;
+    height: 62px !important;
+
+    padding: 0 8px !important;
+
+    flex-direction: row !important;
+
+    gap: 6px !important;
+
+    font-size: 11px !important;
+
+    white-space: nowrap !important;
+}
+
+.menu-btn span {
+    font-size: 18px !important;
+}
+
+
+/* =====================================================
+   DÍA / NOCHE
+===================================================== */
+
+.modo {
+    top: 10px !important;
+    right: 15px !important;
+
+    height: 50px !important;
+
+    border-radius: 11px !important;
+}
+
+.modo button {
+    min-width: 100px !important;
+
+    padding: 0 11px !important;
+
+    font-size: 11px !important;
+}
+
+
+/* =====================================================
+   EXPLORA LA PLAZA
+===================================================== */
+
+.explorar {
+    top: 82px !important;
+    left: 15px !important;
+
+    width: 235px !important;
+
+    padding: 10px 12px !important;
+
+    gap: 10px !important;
+
+    border-radius: 11px !important;
+}
+
+.iconoExplorar {
+    font-size: 28px !important;
+}
+
+.explorar h2 {
+    margin-bottom: 3px !important;
+
+    font-size: 16px !important;
+}
+
+.explorar p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+}
+
+
+/* =====================================================
+   PANEL DERECHO
+===================================================== */
+
+#panel {
+    top: 82px !important;
+    right: 15px !important;
+
+    width: 270px !important;
+
+    padding: 11px !important;
+
+    border-radius: 12px !important;
+}
+
+.panel-titulo {
+    margin-bottom: 8px !important;
+}
+
+.panel-titulo h2 {
+    font-size: 17px !important;
+}
+
+#cerrarPanel {
+    width: 26px !important;
+    height: 26px !important;
+
+    font-size: 22px !important;
+}
+
+
+/* Imagen de la rampa */
+
+.imagen-rampa {
+    height: 125px !important;
+    margin-bottom: 7px !important;
+}
+
+
+/* Datos */
+
+.fila {
+    min-height: 27px !important;
+    font-size: 11px !important;
+}
+
+.detalle {
+    margin-top: 8px !important;
+
+    padding: 9px !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =====================================================
+   MARCADORES
+===================================================== */
+
+.marcador {
+    padding: 6px 11px !important;
+
+    font-size: 11px !important;
+
+    border-radius: 20px !important;
+}
+
+
+/* Nuevas posiciones */
+
+.edificio {
+    top: 17% !important;
+    left: 26% !important;
+}
+
+.encuentro {
+    top: 36% !important;
+    left: 24% !important;
+}
+
+.monumento {
+    top: 31% !important;
+    left: 49% !important;
+}
+
+.vehiculo {
+    top: 17% !important;
+    right: 27% !important;
+}
+
+.areas {
+    top: 41% !important;
+    right: 23% !important;
+}
+
+.mobiliario {
+    top: 52% !important;
+    right: 24% !important;
+}
+
+.rampa {
+    top: 62% !important;
+    left: 45% !important;
+    bottom: auto !important;
+}
+
+
+/* =====================================================
+   PROYECTO - ABAJO IZQUIERDA
+===================================================== */
+
+.proyecto {
+    left: 15px !important;
+    bottom: 15px !important;
+
+    width: 390px !important;
+
+    padding: 8px 12px !important;
+
+    gap: 10px !important;
+
+    border-radius: 11px !important;
+}
+
+.mapa {
+    font-size: 28px !important;
+}
+
+.proyecto small {
+    font-size: 10px !important;
+}
+
+.proyecto strong {
+    font-size: 12px !important;
+}
+
+
+/* =====================================================
+   AYUDA - ABAJO DERECHA
+===================================================== */
+
+.ayuda {
+    right: 15px !important;
+    bottom: 15px !important;
+
+    padding: 9px 13px !important;
+
+    font-size: 11px !important;
+
+    border-radius: 11px !important;
+}
+
+
+/* =====================================================
+   AJUSTE PARA LAPTOP
+===================================================== */
+
+@media (max-width: 1400px) {
+
+    .cabecera {
+        width: 390px !important;
+    }
+
+    .menu {
+        left: 420px !important;
+    }
+
+    .menu-btn {
+        width: 100px !important;
+        font-size: 10px !important;
+    }
+
+    .modo button {
+        min-width: 92px !important;
+    }
+}
+
+
+/* =====================================================
+   AJUSTE PARA PANTALLAS MÁS PEQUEÑAS
+===================================================== */
+
+@media (max-width: 1180px) {
+
+    .cabecera {
+        width: 330px !important;
+    }
+
+    .cabecera p,
+    .separador {
+        display: none !important;
+    }
+
+    .menu {
+        left: 350px !important;
+    }
+
+    .menu-btn {
+        width: 82px !important;
+        padding: 0 4px !important;
+    }
+
+    .menu-btn span {
+        font-size: 15px !important;
+    }
+
+    .modo button {
+        min-width: 75px !important;
+        padding: 0 6px !important;
+    }
+}
