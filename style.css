@@ -1172,3 +1172,579 @@ button {
 .rampa-visual {
     display: none;
 }
+/* =====================================================
+   ESCENARIO - PLAZA DE ARMAS
+===================================================== */
+
+#escenario {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    background: #354b3d;
+}
+
+
+/* =====================================================
+   CALLES ALREDEDOR DE LA PLAZA
+===================================================== */
+
+.calle {
+    position: absolute;
+    z-index: 2;
+
+    background: #30343a;
+
+    box-shadow:
+        inset 0 0 0 3px #555b61,
+        inset 0 0 20px rgba(0,0,0,.4);
+}
+
+/* Calle superior */
+
+.calle-arriba {
+    top: 95px;
+    left: 13%;
+    right: 13%;
+
+    height: 72px;
+
+    border-radius: 18px 18px 5px 5px;
+}
+
+/* Calle inferior */
+
+.calle-abajo {
+    bottom: 65px;
+    left: 13%;
+    right: 13%;
+
+    height: 72px;
+
+    border-radius: 5px 5px 18px 18px;
+}
+
+/* Calle izquierda */
+
+.calle-izquierda {
+    top: 95px;
+    bottom: 65px;
+
+    left: 13%;
+
+    width: 72px;
+
+    border-radius: 18px 5px 5px 18px;
+}
+
+/* Calle derecha */
+
+.calle-derecha {
+    top: 95px;
+    bottom: 65px;
+
+    right: 13%;
+
+    width: 72px;
+
+    border-radius: 5px 18px 18px 5px;
+}
+
+
+/* =====================================================
+   LÍNEAS VIALES
+===================================================== */
+
+.linea-vial {
+    position: absolute;
+
+    left: 4%;
+    right: 4%;
+
+    top: 50%;
+
+    height: 3px;
+
+    transform: translateY(-50%);
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #f4d03f 0px,
+            #f4d03f 25px,
+            transparent 25px,
+            transparent 48px
+        );
+}
+
+.linea-vial.vertical {
+    top: 4%;
+    bottom: 4%;
+
+    left: 50%;
+    right: auto;
+
+    width: 3px;
+    height: auto;
+
+    transform: translateX(-50%);
+
+    background:
+        repeating-linear-gradient(
+            180deg,
+            #f4d03f 0px,
+            #f4d03f 25px,
+            transparent 25px,
+            transparent 48px
+        );
+}
+
+
+/* =====================================================
+   PLAZA PRINCIPAL
+===================================================== */
+
+.plaza-base {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 167px;
+    bottom: 137px;
+
+    left: calc(13% + 72px);
+    right: calc(13% + 72px);
+
+    overflow: hidden;
+
+    border: 9px solid #c7c1ae;
+
+    border-radius: 38%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #89a86c 0%,
+            #6e965b 45%,
+            #527747 100%
+        );
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        inset 0 0 35px rgba(0,0,0,.16);
+}
+
+
+/* =====================================================
+   JARDINES
+===================================================== */
+
+.jardin {
+    position: absolute;
+
+    background:
+        radial-gradient(
+            circle,
+            #6fa65c,
+            #4e8046 70%
+        );
+
+    border: 3px solid rgba(43,92,49,.45);
+
+    z-index: 2;
+}
+
+.jardin-1 {
+    top: 8%;
+    left: 7%;
+
+    width: 37%;
+    height: 36%;
+
+    border-radius: 70% 20% 45% 20%;
+}
+
+.jardin-2 {
+    top: 8%;
+    right: 7%;
+
+    width: 37%;
+    height: 36%;
+
+    border-radius: 20% 70% 20% 45%;
+}
+
+.jardin-3 {
+    bottom: 8%;
+    left: 7%;
+
+    width: 37%;
+    height: 36%;
+
+    border-radius: 20% 45% 20% 70%;
+}
+
+.jardin-4 {
+    bottom: 8%;
+    right: 7%;
+
+    width: 37%;
+    height: 36%;
+
+    border-radius: 45% 20% 70% 20%;
+}
+
+
+/* =====================================================
+   CAMINOS DE LA PLAZA
+===================================================== */
+
+.camino {
+    position: absolute;
+
+    z-index: 4;
+
+    background: #d5cdbb;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.camino-horizontal {
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 42px;
+
+    transform: translateY(-50%);
+}
+
+.camino-vertical {
+    top: 0;
+    left: 50%;
+
+    width: 42px;
+    height: 100%;
+
+    transform: translateX(-50%);
+}
+
+
+/* Caminos diagonales */
+
+.camino-diagonal {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 4;
+
+    width: 120%;
+    height: 28px;
+
+    background: #d5cdbb;
+
+    transform-origin: center;
+}
+
+.diagonal-1 {
+    transform:
+        translate(-50%, -50%)
+        rotate(27deg);
+}
+
+.diagonal-2 {
+    transform:
+        translate(-50%, -50%)
+        rotate(-27deg);
+}
+
+
+/* =====================================================
+   CENTRO Y MONUMENTO
+===================================================== */
+
+.centro-plaza {
+    position: absolute;
+
+    z-index: 7;
+
+    top: 50%;
+    left: 50%;
+
+    width: 125px;
+    height: 125px;
+
+    transform: translate(-50%, -50%);
+
+    border: 9px solid #d5cdbb;
+    border-radius: 50%;
+
+    background: #aaa390;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.35),
+        inset 0 0 10px rgba(255,255,255,.25);
+}
+
+.base-monumento {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #77766f;
+
+    box-shadow: 0 5px 10px rgba(0,0,0,.35);
+}
+
+.monumento-3d {
+    position: absolute;
+
+    left: 50%;
+    bottom: 22px;
+
+    width: 18px;
+    height: 65px;
+
+    transform: translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            #9b9b95,
+            #eeeeea,
+            #8b8b86
+        );
+
+    clip-path: polygon(
+        30% 100%,
+        20% 30%,
+        35% 0,
+        65% 0,
+        80% 30%,
+        70% 100%
+    );
+
+    filter: drop-shadow(5px 6px 4px rgba(0,0,0,.3));
+}
+
+
+/* =====================================================
+   ÁRBOLES
+===================================================== */
+
+.arbol {
+    position: absolute;
+
+    z-index: 6;
+
+    width: 38px;
+    height: 45px;
+}
+
+.copa {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #75b85e,
+            #36763c 65%,
+            #22572f
+        );
+
+    box-shadow: 4px 6px 7px rgba(0,0,0,.3);
+}
+
+.tronco {
+    position: absolute;
+
+    width: 7px;
+    height: 16px;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #6d4728;
+}
+
+
+/* Posiciones */
+
+.arbol1 {
+    top: 12%;
+    left: 15%;
+}
+
+.arbol2 {
+    top: 15%;
+    left: 34%;
+}
+
+.arbol3 {
+    top: 13%;
+    right: 16%;
+}
+
+.arbol4 {
+    top: 19%;
+    right: 33%;
+}
+
+.arbol5 {
+    bottom: 13%;
+    left: 16%;
+}
+
+.arbol6 {
+    bottom: 18%;
+    left: 34%;
+}
+
+.arbol7 {
+    bottom: 13%;
+    right: 16%;
+}
+
+.arbol8 {
+    bottom: 18%;
+    right: 34%;
+}
+
+
+/* =====================================================
+   BANCAS
+===================================================== */
+
+.banca {
+    position: absolute;
+
+    z-index: 7;
+
+    width: 35px;
+    height: 11px;
+
+    border-radius: 3px;
+
+    background: #70462c;
+
+    box-shadow:
+        0 4px 0 #4d3323,
+        0 7px 7px rgba(0,0,0,.3);
+}
+
+.banca1 {
+    top: 32%;
+    left: 24%;
+}
+
+.banca2 {
+    top: 32%;
+    right: 24%;
+}
+
+.banca3 {
+    bottom: 30%;
+    left: 24%;
+}
+
+.banca4 {
+    bottom: 30%;
+    right: 24%;
+}
+
+
+/* =====================================================
+   CRUCE PEATONAL
+===================================================== */
+
+.cruce-peatonal {
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    bottom: 72px;
+
+    width: 120px;
+    height: 60px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: space-around;
+
+    padding: 5px 8px;
+}
+
+.cruce-peatonal span {
+    width: 11px;
+    height: 50px;
+
+    background: rgba(255,255,255,.9);
+
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   EFECTO DE PROFUNDIDAD
+===================================================== */
+
+.plaza-base::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            transparent 35%,
+            rgba(0,0,0,.08)
+        );
+}
+
+
+/* =====================================================
+   MODO NOCHE DEL ESCENARIO
+===================================================== */
+
+#app.noche #escenario {
+    filter:
+        brightness(.55)
+        saturate(.8);
+}
+
+
+/* =====================================================
+   EVITAR QUE LA RAMPA Y EL CARRO APAREZCAN
+   SUELTOS TODAVÍA
+===================================================== */
+
+.carro-animado,
+.rampa-visual {
+    display: none !important;
+}
