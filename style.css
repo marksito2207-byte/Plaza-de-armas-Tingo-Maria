@@ -758,3 +758,213 @@ img {
         font-size: 8px;
     }
 }
+/* ==========================================
+   CORRECCIÓN DEFINITIVA DE POSICIONES
+========================================== */
+
+/* AYUDA: esquina inferior derecha */
+.ayuda {
+    position: absolute !important;
+    top: auto !important;
+    left: auto !important;
+
+    right: 15px !important;
+    bottom: 15px !important;
+
+    width: 190px !important;
+    height: auto !important;
+    min-height: 44px !important;
+
+    padding: 8px 12px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    overflow: hidden !important;
+
+    z-index: 50 !important;
+
+    background: rgba(3, 25, 48, .96) !important;
+    border: 1px solid rgba(60, 145, 245, .65) !important;
+    border-radius: 12px !important;
+
+    color: white !important;
+
+    font-size: 9px !important;
+    line-height: 1.3 !important;
+
+    transform: none !important;
+}
+
+
+/* EXPLORA: arriba izquierda */
+.explorar {
+    position: absolute !important;
+
+    top: 82px !important;
+    left: 15px !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 220px !important;
+    height: auto !important;
+    min-height: 70px !important;
+
+    z-index: 50 !important;
+
+    transform: none !important;
+}
+
+
+/* MOBILIARIO URBANO */
+.marcador.mobiliario {
+    position: absolute !important;
+
+    top: 67% !important;
+    right: 25% !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    transform: none !important;
+
+    z-index: 40 !important;
+}
+
+
+/* ÁREAS VERDES */
+.marcador.areas {
+    position: absolute !important;
+
+    top: 57% !important;
+    right: 23% !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+
+/* VEHÍCULO */
+.marcador.vehiculo {
+    position: absolute !important;
+
+    top: 24% !important;
+    right: 22% !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+
+/* EDIFICIO */
+.marcador.edificio {
+    position: absolute !important;
+
+    top: 24% !important;
+    left: 3% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+
+/* ZONA DE ENCUENTRO */
+.marcador.encuentro {
+    position: absolute !important;
+
+    top: 43% !important;
+    left: 13% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+
+/* MONUMENTO */
+.marcador.monumento {
+    position: absolute !important;
+
+    top: 46% !important;
+    left: 50% !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+}
+
+
+/* RAMPA */
+.marcador.rampa {
+    position: absolute !important;
+
+    top: auto !important;
+    left: 50% !important;
+
+    right: auto !important;
+    bottom: 17% !important;
+
+    transform: translateX(-50%) !important;
+}
+
+
+/* PROYECTO ABAJO IZQUIERDA */
+.proyecto {
+    position: absolute !important;
+
+    top: auto !important;
+    right: auto !important;
+
+    left: 15px !important;
+    bottom: 15px !important;
+
+    transform: none !important;
+
+    z-index: 50 !important;
+}
+
+
+/* PANEL DERECHO */
+#panel {
+    position: absolute !important;
+
+    top: 82px !important;
+    right: 15px !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    width: 260px !important;
+
+    transform: none !important;
+
+    z-index: 60 !important;
+}
+
+
+/* Si está cerrado, NO debe quedar ningún pedazo visible */
+#panel.oculto {
+    display: none !important;
+}
+
+
+/* Evitar elementos sueltos arriba */
+.carro-animado,
+.rampa-visual {
+    display: none !important;
+}
