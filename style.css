@@ -1761,7 +1761,7 @@ button {
 
     z-index: 1 !important;
 
-    background-image: url("plaza-tingo-maria.png") !important;
+    background-image: url("./plaza-tingo-maria.png.png") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
