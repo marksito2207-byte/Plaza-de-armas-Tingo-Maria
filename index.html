@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Plaza de Armas de Tingo María</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main id="app">
+
+    <!-- Aquí irá nuestra plaza interactiva -->
+    <div id="escenario"></div>
+
+    <header class="cabecera">
+      <div class="ubicacion">📍</div>
+
+      <div class="titulo">
+        <h1>Plaza de Armas<br>de Tingo María</h1>
+      </div>
+
+      <div class="separador"></div>
+
+      <p>
+        Un espacio accesible,<br>
+        seguro y sostenible
+      </p>
+    </header>
+
+
+    <!-- MENÚ PRINCIPAL -->
+
+    <nav class="menu">
+
+      <button class="menu-btn activo" data-seccion="general">
+        <span>🏠</span>
+        Vista general
+      </button>
+
+      <button class="menu-btn" data-seccion="rampa">
+        <span>♿</span>
+        Rampa
+      </button>
+
+      <button class="menu-btn" data-seccion="cruce">
+        <span>🚶</span>
+        Cruce peatonal
+      </button>
+
+      <button class="menu-btn" data-seccion="vehiculos">
+        <span>🚗</span>
+        Vehículos
+      </button>
+
+      <button class="menu-btn" data-seccion="mobiliario">
+        <span>🪑</span>
+        Mobiliario
+      </button>
+
+      <button class="menu-btn" data-seccion="verde">
+        <span>🌳</span>
+        Áreas verdes
+      </button>
+
+    </nav>
+
+
+    <!-- DÍA / NOCHE -->
+
+    <div class="modo">
+
+      <button id="dia" class="activo">
+        ☀️ Modo día
+      </button>
+
+      <button id="noche">
+        🌙 Modo noche
+      </button>
+
+    </div>
+
+
+    <!-- PANEL EXPLORAR -->
+
+    <section class="explorar">
+
+      <div class="iconoExplorar">☝️</div>
+
+      <div>
+        <h2>Explora la plaza</h2>
+
+        <p>
+          Haz clic en cualquier elemento para ver sus
+          medidas, características y cálculos.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- ETIQUETAS -->
+
+    <button class="marcador edificio">
+      🏢 Edificio principal
+    </button>
+
+    <button class="marcador encuentro">
+      👥 Zona de encuentro
+    </button>
+
+    <button class="marcador monumento">
+      🗿 Monumento
+    </button>
+
+    <button class="marcador vehiculo">
+      🚗 Vehículo
+    </button>
+
+    <button class="marcador areas">
+      🌳 Áreas verdes
+    </button>
+
+    <button class="marcador mobiliario">
+      🪑 Mobiliario urbano
+    </button>
+
+    <button class="marcador rampa">
+      ♿ Rampa accesible
+    </button>
+
+
+    <!-- PANEL DERECHO -->
+
+    <aside id="panel">
+
+      <div class="panel-titulo">
+        <h2>Rampa accesible</h2>
+
+        <button id="cerrarPanel">×</button>
+      </div>
+
+
+      <div class="imagen-rampa">
+
+        <div class="rampa-demo">
+          ♿
+        </div>
+
+      </div>
+
+
+      <div class="fila">
+        <span>Desnivel (h)</span>
+        <strong>0.60 m</strong>
+      </div>
+
+      <div class="fila">
+        <span>Pendiente (P)</span>
+        <strong>8 %</strong>
+      </div>
+
+      <div class="fila">
+        <span>Desarrollo horizontal (L)</span>
+        <strong>7.50 m</strong>
+      </div>
+
+      <div class="fila">
+        <span>Ancho libre</span>
+        <strong>1.50 m</strong>
+      </div>
+
+      <div class="fila">
+        <span>Descanso</span>
+        <strong>1.50 m</strong>
+      </div>
+
+      <div class="fila">
+        <span>Altura de pasamanos</span>
+        <strong>0.70 m y 0.90 m</strong>
+      </div>
+
+      <div class="fila">
+        <span>Norma</span>
+        <strong>A.120 – RNE</strong>
+      </div>
+
+      <button class="detalle">
+        Ver detalle ↗
+      </button>
+
+    </aside>
+
+
+    <!-- INFORMACIÓN DEL PROYECTO -->
+
+    <div class="proyecto">
+
+      <span class="mapa">🗺️</span>
+
+      <div>
+        <small>Proyecto:</small>
+
+        <strong>
+          Accesibilidad en la Plaza de Armas de Tingo María
+        </strong>
+
+        <small>
+          Aplicación de la Norma A.120 – RNE
+        </small>
+      </div>
+
+    </div>
+
+
+    <div class="ayuda">
+      ⓘ
+
+      <span>
+        Haz clic en los elementos<br>
+        para explorar la información.
+      </span>
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
