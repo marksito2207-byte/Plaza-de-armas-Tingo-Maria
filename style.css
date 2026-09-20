@@ -1124,3 +1124,46 @@ button {
         padding: 0 6px !important;
     }
 }
+/* ==========================================
+   ARREGLO MARCADOR MOBILIARIO URBANO
+========================================== */
+
+.marcador.mobiliario {
+    position: absolute !important;
+
+    top: 51% !important;
+    right: 23% !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 6px 12px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 22px !important;
+
+    background: rgba(5, 31, 56, 0.94) !important;
+
+    color: white !important;
+
+    font-size: 11px !important;
+    font-weight: bold !important;
+
+    white-space: nowrap !important;
+
+    box-shadow: 0 5px 16px rgba(0,0,0,0.35) !important;
+}
+
+/* Efecto al pasar el mouse */
+
+.marcador.mobiliario:hover {
+    background: #0878f9 !important;
+    transform: scale(1.06) !important;
+}
