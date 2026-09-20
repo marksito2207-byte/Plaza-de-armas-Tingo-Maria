@@ -1748,3 +1748,177 @@ button {
 .rampa-visual {
     display: none !important;
 }
+/* =====================================================
+   FONDO REAL DE LA PLAZA
+===================================================== */
+
+#escenario {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    z-index: 1 !important;
+
+    background-image: url("plaza-tingo-maria.png") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* =====================================================
+   OCULTAR LA PLAZA HECHA CON CSS
+   porque ahora usamos la imagen
+===================================================== */
+
+#escenario .calle,
+#escenario .plaza-base,
+#escenario .cruce-peatonal,
+#escenario .carro-animado,
+#escenario .rampa-visual {
+    display: none !important;
+}
+
+
+/* =====================================================
+   TODOS LOS CONTROLES ENCIMA DEL FONDO
+===================================================== */
+
+.cabecera,
+.menu,
+.modo,
+.explorar,
+.marcador,
+#panel,
+.proyecto,
+.ayuda {
+    z-index: 20 !important;
+}
+
+
+/* =====================================================
+   PANELES OSCUROS SEMITRANSPARENTES
+===================================================== */
+
+.cabecera,
+.menu,
+.modo,
+.explorar,
+#panel,
+.proyecto,
+.ayuda {
+    background: rgba(3, 25, 47, 0.94) !important;
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* =====================================================
+   MARCADORES
+===================================================== */
+
+.marcador {
+    background: rgba(3, 30, 55, 0.94) !important;
+
+    border: 1px solid rgba(70, 150, 255, 0.9) !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.45) !important;
+}
+
+
+/* EDIFICIO PRINCIPAL */
+
+.marcador.edificio {
+    top: 23% !important;
+    left: 3% !important;
+}
+
+
+/* ZONA DE ENCUENTRO */
+
+.marcador.encuentro {
+    top: 44% !important;
+    left: 13% !important;
+}
+
+
+/* MONUMENTO CENTRAL */
+
+.marcador.monumento {
+    top: 47% !important;
+    left: 48% !important;
+}
+
+
+/* VEHÍCULO */
+
+.marcador.vehiculo {
+    top: 25% !important;
+    right: 22% !important;
+}
+
+
+/* ÁREAS VERDES */
+
+.marcador.areas {
+    top: 58% !important;
+    right: 23% !important;
+}
+
+
+/* MOBILIARIO */
+
+.marcador.mobiliario {
+    top: 69% !important;
+    right: 26% !important;
+}
+
+
+/* RAMPA */
+
+.marcador.rampa {
+    top: auto !important;
+    bottom: 17% !important;
+    left: 46% !important;
+}
+
+
+/* =====================================================
+   MODO DÍA
+===================================================== */
+
+#app:not(.noche) #escenario {
+    filter:
+        brightness(1)
+        saturate(1.05)
+        contrast(1.02) !important;
+}
+
+
+/* =====================================================
+   MODO NOCHE
+===================================================== */
+
+#app.noche #escenario {
+    filter:
+        brightness(0.35)
+        saturate(0.75)
+        contrast(1.1) !important;
+}
+
+
+/* Capa azul nocturna */
+
+#app.noche #escenario::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 20, 50, 0.28);
+
+    pointer-events: none;
+}
