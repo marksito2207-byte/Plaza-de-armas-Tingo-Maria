@@ -187,12 +187,9 @@ function abrirPanel() {
 // CERRAR PANEL CON LA X
 // ==========================================
 
-cerrarPanel.addEventListener("click", function (event) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    panel.classList.add("oculto");
+cerrarPanel.onclick = function () {
+    panel.style.display = "none";
+};
 
 });
 
