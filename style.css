@@ -1678,3 +1678,93 @@ button {
         font-size: 6px !important;
     }
 }
+/* ==========================================
+   ARREGLO AVISO GIRAR CELULAR
+   ========================================== */
+
+/* EN PC SIEMPRE OCULTO */
+#aviso-girar {
+    display: none !important;
+}
+
+/* SOLO APARECE EN CELULAR VERTICAL */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+    #aviso-girar {
+        position: fixed !important;
+        inset: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        padding: 30px !important;
+
+        background: linear-gradient(
+            145deg,
+            #031b32,
+            #062b49
+        ) !important;
+
+        color: white !important;
+        text-align: center !important;
+
+        z-index: 999999 !important;
+    }
+
+    #aviso-girar .telefono {
+        font-size: 65px !important;
+        margin-bottom: 18px !important;
+
+        animation: girarTelefono 2s infinite ease-in-out;
+    }
+
+    #aviso-girar h2 {
+        margin: 0 0 10px !important;
+
+        font-size: 24px !important;
+        font-weight: 800 !important;
+    }
+
+    #aviso-girar p {
+        margin: 0 !important;
+
+        max-width: 300px !important;
+
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+
+        color: #dcecff !important;
+    }
+
+    #app {
+        display: none !important;
+    }
+}
+
+/* CELULAR HORIZONTAL */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+    #aviso-girar {
+        display: none !important;
+    }
+
+    #app {
+        display: block !important;
+    }
+}
+
+@keyframes girarTelefono {
+
+    0%, 35% {
+        transform: rotate(0deg);
+    }
+
+    65%, 100% {
+        transform: rotate(90deg);
+    }
+}
