@@ -1229,3 +1229,452 @@ button {
   }
 
 }
+/* =====================================================
+   MODO MÓVIL HORIZONTAL
+===================================================== */
+
+/* Aviso para girar el celular */
+#aviso-girar {
+    display: none;
+}
+
+
+/* CELULAR VERTICAL */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+
+    #app {
+        display: none !important;
+    }
+
+    #aviso-girar {
+        position: fixed;
+        inset: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 30px;
+
+        background:
+            linear-gradient(
+                rgba(2, 20, 39, 0.96),
+                rgba(3, 34, 58, 0.98)
+            );
+
+        color: white;
+        text-align: center;
+
+        z-index: 999999;
+    }
+
+    #aviso-girar .telefono {
+        font-size: 65px;
+        margin-bottom: 15px;
+
+        animation: girarTelefono 2s infinite ease-in-out;
+    }
+
+    #aviso-girar h2 {
+        margin: 0 0 10px;
+
+        font-size: 24px;
+        font-weight: 800;
+    }
+
+    #aviso-girar p {
+        max-width: 300px;
+
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        color: #d8e7f5;
+    }
+
+    @keyframes girarTelefono {
+
+        0% {
+            transform: rotate(0deg);
+        }
+
+        35% {
+            transform: rotate(0deg);
+        }
+
+        65% {
+            transform: rotate(90deg);
+        }
+
+        100% {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+
+/* =====================================================
+   CELULAR HORIZONTAL
+===================================================== */
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+
+    #aviso-girar {
+        display: none !important;
+    }
+
+    #app {
+        display: block !important;
+
+        position: relative;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* FONDO */
+
+    #escenario {
+        position: absolute !important;
+        inset: 0 !important;
+
+        width: 100vw !important;
+        height: 100vh !important;
+
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+
+    /* =========================
+       TÍTULO
+    ========================= */
+
+    .cabecera {
+        top: 5px !important;
+        left: 6px !important;
+
+        width: 245px !important;
+        height: 48px !important;
+
+        padding: 5px 8px !important;
+
+        border-radius: 10px !important;
+
+        transform: none !important;
+    }
+
+    .ubicacion {
+        font-size: 18px !important;
+    }
+
+    .titulo h1 {
+        font-size: 13px !important;
+        line-height: 13px !important;
+    }
+
+    .separador {
+        height: 29px !important;
+    }
+
+    .cabecera p {
+        font-size: 6px !important;
+        line-height: 8px !important;
+    }
+
+
+    /* =========================
+       MENÚ
+    ========================= */
+
+    .menu {
+        top: 5px !important;
+        left: 260px !important;
+
+        width: calc(100vw - 445px) !important;
+        height: 48px !important;
+
+        display: flex !important;
+
+        overflow: hidden !important;
+
+        border-radius: 10px !important;
+
+        transform: none !important;
+    }
+
+    .menu-btn {
+        flex: 1 1 0 !important;
+
+        min-width: 0 !important;
+        width: auto !important;
+        height: 48px !important;
+
+        padding: 2px !important;
+
+        flex-direction: column !important;
+
+        gap: 1px !important;
+
+        font-size: 6px !important;
+    }
+
+    .menu-btn span {
+        font-size: 13px !important;
+        margin: 0 !important;
+    }
+
+
+    /* =========================
+       DÍA / NOCHE
+    ========================= */
+
+    .modo {
+        top: 5px !important;
+        right: 6px !important;
+
+        width: 170px !important;
+        height: 48px !important;
+
+        display: flex !important;
+
+        transform: none !important;
+    }
+
+    .modo button {
+        width: 50% !important;
+        height: 48px !important;
+
+        padding: 2px !important;
+
+        font-size: 7px !important;
+    }
+
+
+    /* =========================
+       EXPLORA
+    ========================= */
+
+    .explorar {
+        top: 61px !important;
+        left: 6px !important;
+
+        width: 175px !important;
+        min-height: 58px !important;
+
+        padding: 6px 8px !important;
+
+        gap: 6px !important;
+
+        transform: none !important;
+    }
+
+    .iconoExplorar {
+        font-size: 18px !important;
+    }
+
+    .explorar h2 {
+        margin: 0 0 2px !important;
+
+        font-size: 11px !important;
+        line-height: 12px !important;
+    }
+
+    .explorar p {
+        margin: 0 !important;
+
+        font-size: 6px !important;
+        line-height: 8px !important;
+    }
+
+
+    /* =========================
+       MARCADORES
+    ========================= */
+
+    .marcador {
+        padding: 4px 7px !important;
+
+        font-size: 6px !important;
+
+        border-radius: 15px !important;
+    }
+
+
+    .marcador.edificio {
+        top: 31% !important;
+        left: 3% !important;
+    }
+
+    .marcador.encuentro {
+        top: 55% !important;
+        left: 14% !important;
+    }
+
+    .marcador.monumento {
+        top: 48% !important;
+        left: 47% !important;
+    }
+
+    .marcador.vehiculo {
+        top: 28% !important;
+        right: 22% !important;
+    }
+
+    .marcador.areas {
+        top: 58% !important;
+        right: 22% !important;
+    }
+
+    .marcador.mobiliario {
+        top: 70% !important;
+        right: 25% !important;
+    }
+
+    .marcador.rampa {
+        top: auto !important;
+        bottom: 14% !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+
+    /* =========================
+       PANEL DERECHO
+    ========================= */
+
+    #panel {
+        position: absolute !important;
+
+        top: 61px !important;
+        right: 6px !important;
+        bottom: auto !important;
+        left: auto !important;
+
+        width: 220px !important;
+        max-height: calc(100vh - 68px) !important;
+
+        padding: 8px !important;
+
+        overflow-y: auto !important;
+
+        border-radius: 11px !important;
+
+        transform: none !important;
+    }
+
+    .panel-titulo {
+        min-height: 22px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .panel-titulo h2 {
+        font-size: 12px !important;
+    }
+
+    #cerrarPanel {
+        width: 20px !important;
+        height: 20px !important;
+
+        font-size: 17px !important;
+    }
+
+
+    /* FOTO DEL PANEL */
+
+    .imagen-rampa {
+        width: 100% !important;
+        height: 78px !important;
+
+        margin-bottom: 4px !important;
+
+        border-radius: 7px !important;
+    }
+
+    #imagenPanel {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* DATOS */
+
+    .fila {
+        min-height: 18px !important;
+
+        padding: 2px 0 !important;
+
+        font-size: 7px !important;
+    }
+
+    .fila span,
+    .fila strong {
+        font-size: 7px !important;
+    }
+
+
+    /* VER DETALLE */
+
+    .detalle {
+        height: 27px !important;
+
+        margin-top: 5px !important;
+        padding: 3px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* =========================
+       PROYECTO
+    ========================= */
+
+    .proyecto {
+        left: 6px !important;
+        bottom: 6px !important;
+
+        width: 260px !important;
+        min-height: 42px !important;
+
+        padding: 5px 8px !important;
+    }
+
+    .mapa {
+        font-size: 19px !important;
+    }
+
+    .proyecto small {
+        font-size: 6px !important;
+    }
+
+    .proyecto strong {
+        font-size: 8px !important;
+    }
+
+
+    /* =========================
+       AYUDA
+    ========================= */
+
+    .ayuda {
+        display: flex !important;
+
+        right: 6px !important;
+        bottom: 6px !important;
+
+        min-width: 150px !important;
+        min-height: 35px !important;
+
+        padding: 5px !important;
+
+        font-size: 6px !important;
+    }
+}
