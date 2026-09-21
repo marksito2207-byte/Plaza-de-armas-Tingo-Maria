@@ -1768,3 +1768,40 @@ button {
         transform: rotate(90deg);
     }
 }
+/* CERRAR PANEL CON LA X */
+#panel.oculto {
+    display: none !important;
+}
+
+/* X DEL PANEL */
+#cerrarPanel {
+    position: relative;
+    z-index: 10001;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+#cerrarPanel:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
