@@ -179,7 +179,7 @@ btnNoche.addEventListener("click", () => {
 // ==========================================
 
 function abrirPanel() {
-    panel.classList.remove("oculto");
+    panel.style.display = "block";
 }
 
 
