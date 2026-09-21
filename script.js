@@ -184,13 +184,17 @@ function abrirPanel() {
 
 
 // ==========================================
-// CERRAR PANEL
+// CERRAR PANEL CON LA X
 // ==========================================
 
-cerrarPanel.addEventListener("click", () => {
-  panel.classList.add("oculto");
-});
+cerrarPanel.addEventListener("click", function (event) {
 
+    event.preventDefault();
+    event.stopPropagation();
+
+    panel.classList.add("oculto");
+
+});
 
 // ==========================================
 // MOSTRAR ELEMENTO
