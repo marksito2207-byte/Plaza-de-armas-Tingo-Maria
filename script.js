@@ -191,8 +191,6 @@ cerrarPanel.onclick = function () {
     panel.style.display = "none";
 };
 
-});
-
 // ==========================================
 // MOSTRAR ELEMENTO
 // ==========================================
